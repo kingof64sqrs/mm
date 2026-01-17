@@ -1,0 +1,5 @@
+# EAS Ignore - only exclude build artifacts and temp files
+node_modules/
+.expo/
+.git/
+*.log
