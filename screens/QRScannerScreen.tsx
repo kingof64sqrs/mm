@@ -11,6 +11,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { CameraView, Camera } from 'expo-camera';
 import { Ionicons } from '@expo/vector-icons';
+import membersData from '../data/members.json';
 
 type RootStackParamList = {
   Directory: undefined;
@@ -42,16 +43,30 @@ const QRScannerScreen: React.FC<Props> = ({ navigation }) => {
 
   const handleBarCodeScanned = ({ type, data }: { type: string; data: string }) => {
     setScanned(true);
-    Alert.alert(
-      'QR Code Scanned',
-      `Type: ${type}\nData: ${data}`,
-      [
-        {
-          text: 'OK',
-          onPress: () => setScanned(false),
-        },
-      ]
-    );
+    
+    // Check if it's a member QR code
+    if (data.startsWith('MEMBER:')) {
+      const memberId = data.replace('MEMBER:', '');
+      const member = membersData.find(m => m.id === memberId);
+      
+      if (member) {
+        // Navigate to member detail
+        navigation.navigate('MemberDetail', { member });
+      } else {
+        Alert.alert(
+          'Member Not Found',
+          `No member found with ID: ${memberId}`,
+          [{ text: 'OK', onPress: () => setScanned(false) }]
+        );
+      }
+    } else {
+      // Show generic QR code data
+      Alert.alert(
+        'QR Code Scanned',
+        `Type: ${type}\nData: ${data}`,
+        [{ text: 'OK', onPress: () => setScanned(false) }]
+      );
+    }
   };
 
   if (hasPermission === null) {

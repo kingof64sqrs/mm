@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import {
   View,
   Text,
@@ -14,7 +14,12 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RouteProp } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
-import * as FileSystem from 'expo-file-system';import { getImage } from '../utils/imageHelper';import { Member } from './DirectoryScreen';
+import * as Sharing from 'expo-sharing';
+import * as FileSystem from 'expo-file-system';
+import ViewShot from 'react-native-view-shot';
+import QRCode from 'react-native-qrcode-svg';
+import { getImage } from '../utils/imageHelper';
+import { Member } from './DirectoryScreen';
 
 type RootStackParamList = {
   Directory: undefined;
@@ -36,6 +41,7 @@ type Props = {
 
 const MemberDetailScreen: React.FC<Props> = ({ navigation, route }) => {
   const { member } = route.params;
+  const qrCodeRef = useRef<ViewShot>(null);
 
   const handleCall = async () => {
     const phoneNumber = member.phone.replace(/\s/g, '');
@@ -68,8 +74,49 @@ const MemberDetailScreen: React.FC<Props> = ({ navigation, route }) => {
     }
   };
 
+  const handleShareQR = async () => {
+    try {
+      if (qrCodeRef.current && qrCodeRef.current.capture) {
+        // Capture the QR code as an image
+        const uri = await qrCodeRef.current.capture();
+        
+        // Check if sharing is available
+        const isAvailable = await Sharing.isAvailableAsync();
+        if (isAvailable) {
+          await Sharing.shareAsync(uri, {
+            mimeType: 'image/png',
+            dialogTitle: `Share ${member.name}'s QR Code`,
+          });
+        } else {
+          Alert.alert('Error', 'Sharing is not available on this device');
+        }
+      }
+    } catch (error) {
+      console.error('Error sharing QR code:', error);
+      Alert.alert('Error', 'Failed to share QR code');
+    }
+  };
+
   return (
     <SafeAreaView style={styles.container}>
+      {/* Hidden QR Code for sharing */}
+      <View style={styles.hiddenQRContainer}>
+        <ViewShot ref={qrCodeRef} options={{ format: 'png', quality: 1.0 }}>
+          <View style={styles.qrCodeCard}>
+            <Text style={styles.qrCardTitle}>{member.name}</Text>
+            <QRCode
+              value={`MEMBER:${member.id}`}
+              size={250}
+              logo={require('../assets/logo.png')}
+              logoSize={50}
+              logoBackgroundColor="white"
+              logoBorderRadius={10}
+            />
+            <Text style={styles.qrCardSubtitle}>Scan to view profile</Text>
+          </View>
+        </ViewShot>
+      </View>
+
       <View style={styles.header}>
         <TouchableOpacity
           style={styles.backButton}
@@ -83,7 +130,12 @@ const MemberDetailScreen: React.FC<Props> = ({ navigation, route }) => {
           resizeMode="contain"
         />
         <Text style={styles.headerTitle}>Member Details</Text>
-        <View style={{ width: 40 }} />
+        <TouchableOpacity
+          style={styles.shareButton}
+          onPress={handleShareQR}
+        >
+          <Ionicons name="share-social" size={24} color="#6B46C1" />
+        </TouchableOpacity>
       </View>
 
       <ScrollView style={styles.content} showsVerticalScrollIndicator={false}>
@@ -156,6 +208,30 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#F5F5F5',
   },
+  hiddenQRContainer: {
+    position: 'absolute',
+    left: -9999,
+    top: -9999,
+  },
+  qrCodeCard: {
+    backgroundColor: '#fff',
+    padding: 30,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  qrCardTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#333',
+    marginBottom: 20,
+    textAlign: 'center',
+  },
+  qrCardSubtitle: {
+    fontSize: 14,
+    color: '#666',
+    marginTop: 20,
+    textAlign: 'center',
+  },
   header: {
     backgroundColor: '#fff',
     padding: 20,
@@ -166,6 +242,9 @@ const styles = StyleSheet.create({
     borderBottomColor: '#E0E0E0',
   },
   backButton: {
+    padding: 5,
+  },
+  shareButton: {
     padding: 5,
   },
   logo: {
