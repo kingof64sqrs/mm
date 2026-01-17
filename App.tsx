@@ -1,20 +1,44 @@
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import DirectoryScreen from './screens/DirectoryScreen';
+import MemberDetailScreen from './screens/MemberDetailScreen';
+import QRScannerScreen from './screens/QRScannerScreen';
+
+export type Member = {
+  id: string;
+  name: string;
+  role: string;
+  photo: string;
+  phone: string;
+  email: string;
+  address: string;
+  bloodGroup: string;
+};
+
+export type RootStackParamList = {
+  Directory: undefined;
+  MemberDetail: { member: Member };
+  QRScanner: undefined;
+};
+
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+    <NavigationContainer>
       <StatusBar style="auto" />
-    </View>
+      <Stack.Navigator
+        initialRouteName="Directory"
+        screenOptions={{
+          headerShown: false,
+        }}
+      >
+        <Stack.Screen name="Directory" component={DirectoryScreen} />
+        <Stack.Screen name="MemberDetail" component={MemberDetailScreen} />
+        <Stack.Screen name="QRScanner" component={QRScannerScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
