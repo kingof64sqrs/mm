@@ -10,19 +10,36 @@
     "splash": {
       "image": "./assets/logo.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#6B46C1"
     },
+    "jsEngine": "hermes",
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.mahilamandal.directory",
+      "splash": {
+        "image": "./assets/logo.png",
+        "resizeMode": "contain",
+        "backgroundColor": "#6B46C1"
+      },
       "infoPlist": {
-        "ITSAppUsesNonExemptEncryption": false
+        "ITSAppUsesNonExemptEncryption": false,
+        "UILaunchStoryboardName": "SplashScreen"
       }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/logo.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#6B46C1"
+      },
+      "splash": {
+        "image": "./assets/logo.png",
+        "resizeMode": "contain",
+        "backgroundColor": "#6B46C1",
+        "mdpi": "./assets/logo.png",
+        "hdpi": "./assets/logo.png",
+        "xhdpi": "./assets/logo.png",
+        "xxhdpi": "./assets/logo.png",
+        "xxxhdpi": "./assets/logo.png"
       },
       "package": "com.mahilamandal.directory",
       "versionCode": 1,

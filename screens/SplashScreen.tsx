@@ -28,7 +28,7 @@ const SplashScreen: React.FC<Props> = ({ onFinish }) => {
       Animated.parallel([
         Animated.timing(fadeAnim, {
           toValue: 1,
-          duration: 800,
+          duration: 500,
           useNativeDriver: true,
         }),
         Animated.spring(scaleAnim, {
@@ -38,37 +38,24 @@ const SplashScreen: React.FC<Props> = ({ onFinish }) => {
           useNativeDriver: true,
         }),
       ]),
-      // Small bounce effect
-      Animated.spring(scaleAnim, {
-        toValue: 1.05,
-        friction: 3,
-        tension: 40,
-        useNativeDriver: true,
-      }),
-      Animated.spring(scaleAnim, {
-        toValue: 1,
-        friction: 3,
-        tension: 40,
-        useNativeDriver: true,
-      }),
       // Text fade in and slide up
       Animated.parallel([
         Animated.timing(textFadeAnim, {
           toValue: 1,
-          duration: 600,
+          duration: 400,
           useNativeDriver: true,
         }),
         Animated.timing(slideAnim, {
           toValue: 0,
-          duration: 600,
+          duration: 400,
           useNativeDriver: true,
         }),
       ]),
     ]).start(() => {
-      // Wait a bit then navigate to main app
+      // Navigate to main app quickly
       setTimeout(() => {
         onFinish();
-      }, 800);
+      }, 300);
     });
   }, []);
 
