@@ -145,20 +145,29 @@ const DirectoryScreen: React.FC<Props> = ({ navigation }) => {
     return teams;
   }, [members]);
 
-  const filteredMembers = members.filter((member) => {
-    const query = searchQuery.toLowerCase().trim();
-    if (!query) return true;
-    
-    // Search in name
-    const nameMatch = member.name.toLowerCase().includes(query);
-    
-    // Search in phone number (remove spaces and special characters for better matching)
-    const cleanPhone = member.phone.replace(/\s+/g, '');
-    const cleanQuery = query.replace(/\s+/g, '');
-    const phoneMatch = cleanPhone.includes(cleanQuery);
-    
-    return nameMatch || phoneMatch;
-  });
+  const filteredMembers = members
+    .filter((member) => {
+      const query = searchQuery.toLowerCase().trim();
+      if (!query) return true;
+      
+      // Search in name
+      const nameMatch = member.name.toLowerCase().includes(query);
+      
+      // Search in phone number (remove spaces and special characters for better matching)
+      const cleanPhone = member.phone.replace(/\s+/g, '');
+      const cleanQuery = query.replace(/\s+/g, '');
+      const phoneMatch = cleanPhone.includes(cleanQuery);
+      
+      return nameMatch || phoneMatch;
+    })
+    .sort((a, b) => {
+      // Presidents always at top
+      if (a.role === 'President' && b.role !== 'President') return -1;
+      if (b.role === 'President' && a.role !== 'President') return 1;
+      
+      // Then sort alphabetically by name
+      return a.name.localeCompare(b.name);
+    });
 
   const renderMember = ({ item }: { item: Member }) => {
     const scaleAnim = new Animated.Value(1);
