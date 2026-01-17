@@ -20,7 +20,6 @@ import { getImage } from '../utils/imageHelper';
 type RootStackParamList = {
   Directory: undefined;
   MemberDetail: { member: Member };
-  QRScanner: undefined;
 };
 
 type DirectoryScreenNavigationProp = NativeStackNavigationProp<
@@ -243,22 +242,6 @@ const DirectoryScreen: React.FC<Props> = ({ navigation }) => {
               <Ionicons name="people" size={16} color="#6B46C1" />
               <Text style={styles.subtitle}>{members.length} Members</Text>
             </View>
-          </View>
-          <View style={styles.headerButtons}>
-            <TouchableOpacity
-              style={styles.iconButton}
-              onPress={() => {/* Download functionality */}}
-              activeOpacity={0.7}
-            >
-              <Ionicons name="cloud-download" size={24} color="#6B46C1" />
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={styles.iconButton}
-              onPress={() => navigation.navigate('QRScanner')}
-              activeOpacity={0.7}
-            >
-              <Ionicons name="qr-code" size={24} color="#6B46C1" />
-            </TouchableOpacity>
           </View>
         </View>
       </View>

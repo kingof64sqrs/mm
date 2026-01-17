@@ -4,7 +4,6 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
 import DirectoryScreen from './screens/DirectoryScreen';
 import MemberDetailScreen from './screens/MemberDetailScreen';
-import QRScannerScreen from './screens/QRScannerScreen';
 import SplashScreen from './screens/SplashScreen';
 
 export type Member = {
@@ -21,7 +20,6 @@ export type Member = {
 export type RootStackParamList = {
   Directory: undefined;
   MemberDetail: { member: Member };
-  QRScanner: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -44,7 +42,6 @@ export default function App() {
       >
         <Stack.Screen name="Directory" component={DirectoryScreen} />
         <Stack.Screen name="MemberDetail" component={MemberDetailScreen} />
-        <Stack.Screen name="QRScanner" component={QRScannerScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
