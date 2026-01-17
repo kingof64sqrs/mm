@@ -43,7 +43,15 @@ const MemberDetailScreen: React.FC<Props> = ({ navigation, route }) => {
   const { member } = route.params;
   const qrCodeRef = useRef<ViewShot>(null);
 
+  // Check if this is a placeholder captain (details not available)
+  const isPlaceholder = member.address === 'Details not available';
+
   const handleCall = async () => {
+    if (isPlaceholder || !member.phone) {
+      Alert.alert('Not Available', 'Phone number not available for this member');
+      return;
+    }
+    
     const phoneNumber = member.phone.replace(/\s/g, '');
     const url = `tel:${phoneNumber}`;
     
@@ -60,6 +68,11 @@ const MemberDetailScreen: React.FC<Props> = ({ navigation, route }) => {
   };
 
   const handleEmail = async () => {
+    if (isPlaceholder || !member.email) {
+      Alert.alert('Not Available', 'Email address not available for this member');
+      return;
+    }
+    
     const url = `mailto:${member.email}`;
     
     try {
@@ -140,9 +153,15 @@ const MemberDetailScreen: React.FC<Props> = ({ navigation, route }) => {
 
       <ScrollView style={styles.content} showsVerticalScrollIndicator={false}>
         <View style={styles.profileSection}>
-          <Image source={getImage(member.photo)} style={styles.profilePhoto} />
+          <Image source={getImage(member.photo || 'ids/default.jpg')} style={styles.profilePhoto} />
           <Text style={styles.memberName}>{member.name}</Text>
           <Text style={styles.memberRole}>{member.role}</Text>
+          {isPlaceholder && (
+            <View style={styles.placeholderBadge}>
+              <Ionicons name="information-circle" size={16} color="#FF6B6B" />
+              <Text style={styles.placeholderText}>Details not available</Text>
+            </View>
+          )}
         </View>
 
         <View style={styles.detailsContainer}>
@@ -151,7 +170,7 @@ const MemberDetailScreen: React.FC<Props> = ({ navigation, route }) => {
               <Ionicons name="call" size={24} color="#6B46C1" />
               <View style={styles.detailText}>
                 <Text style={styles.detailLabel}>Phone Number</Text>
-                <Text style={styles.detailValue}>{member.phone}</Text>
+                <Text style={styles.detailValue}>{member.phone || 'Not available'}</Text>
               </View>
             </View>
           </View>
@@ -161,7 +180,7 @@ const MemberDetailScreen: React.FC<Props> = ({ navigation, route }) => {
               <Ionicons name="mail" size={24} color="#6B46C1" />
               <View style={styles.detailText}>
                 <Text style={styles.detailLabel}>Email</Text>
-                <Text style={styles.detailValue}>{member.email}</Text>
+                <Text style={styles.detailValue}>{member.email || 'Not available'}</Text>
               </View>
             </View>
           </View>
@@ -181,7 +200,7 @@ const MemberDetailScreen: React.FC<Props> = ({ navigation, route }) => {
               <Ionicons name="water" size={24} color="#6B46C1" />
               <View style={styles.detailText}>
                 <Text style={styles.detailLabel}>Blood Group</Text>
-                <Text style={styles.detailValue}>{member.bloodGroup}</Text>
+                <Text style={styles.detailValue}>{member.bloodGroup || 'Not available'}</Text>
               </View>
             </View>
           </View>
@@ -189,12 +208,20 @@ const MemberDetailScreen: React.FC<Props> = ({ navigation, route }) => {
       </ScrollView>
 
       <View style={styles.actionButtons}>
-        <TouchableOpacity style={styles.callButton} onPress={handleCall}>
+        <TouchableOpacity 
+          style={[styles.callButton, (isPlaceholder || !member.phone) && styles.disabledButton]} 
+          onPress={handleCall}
+          disabled={isPlaceholder || !member.phone}
+        >
           <Ionicons name="call" size={24} color="#fff" />
           <Text style={styles.buttonText}>Call</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.emailButton} onPress={handleEmail}>
+        <TouchableOpacity 
+          style={[styles.emailButton, (isPlaceholder || !member.email) && styles.disabledButton]} 
+          onPress={handleEmail}
+          disabled={isPlaceholder || !member.email}
+        >
           <Ionicons name="mail" size={24} color="#fff" />
           <Text style={styles.buttonText}>Email</Text>
         </TouchableOpacity>
@@ -288,6 +315,21 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#666',
   },
+  placeholderBadge: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#FFE5E5',
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: 20,
+    marginTop: 10,
+    gap: 5,
+  },
+  placeholderText: {
+    fontSize: 14,
+    color: '#FF6B6B',
+    fontWeight: '500',
+  },
   detailsContainer: {
     padding: 20,
   },
@@ -361,6 +403,10 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: '600',
     marginLeft: 10,
+  },
+  disabledButton: {
+    backgroundColor: '#CCCCCC',
+    opacity: 0.6,
   },
 });
 

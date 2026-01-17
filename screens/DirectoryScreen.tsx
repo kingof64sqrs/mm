@@ -14,6 +14,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { Ionicons } from '@expo/vector-icons';
 import membersData from '../data/members.json';
+import cookingGroupsData from '../data/cookingGroups.json';
 import { getImage } from '../utils/imageHelper';
 
 type RootStackParamList = {
@@ -40,12 +41,14 @@ export type Member = {
   email: string;
   address: string;
   bloodGroup: string;
+  groupNumber?: number;
+  groupName?: string;
 };
 
 type Group = {
   id: string;
   name: string;
-  captain: Member;
+  captains: Member[];
   members: Member[];
 };
 
@@ -55,32 +58,89 @@ const DirectoryScreen: React.FC<Props> = ({ navigation }) => {
   const [expandedGroupId, setExpandedGroupId] = useState<string | null>(null);
   const [members] = useState<Member[]>(membersData);
 
-  const teamNames = [
-    'Alpha Team', 'Beta Team', 'Gamma Team', 'Delta Team', 'Epsilon Team',
-    'Zeta Team', 'Eta Team', 'Theta Team', 'Iota Team', 'Kappa Team'
-  ];
+  // Helper function to normalize names for matching
+  const normalizeName = (name: string | undefined | null) => {
+    if (!name) return '';
+    return name.toLowerCase().replace(/[.,]/g, '').trim();
+  };
+
+  // Helper function to find member by name (with fuzzy matching)
+  const findMemberByName = (searchName: string | undefined | null): Member | null => {
+    if (!searchName) return null;
+    const normalized = normalizeName(searchName);
+    if (!normalized) return null;
+    
+    // Try exact match first
+    let found = members.find(m => normalizeName(m.name) === normalized);
+    if (found) return found;
+    
+    // Try partial match (at least 2 words match)
+    const searchWords = normalized.split(/\s+/).filter(w => w.length > 2);
+    found = members.find(m => {
+      const memberWords = normalizeName(m.name).split(/\s+/).filter(w => w.length > 2);
+      const matches = searchWords.filter(sw => memberWords.some(mw => mw.includes(sw) || sw.includes(mw)));
+      return matches.length >= 2;
+    });
+    
+    return found || null;
+  };
 
   const groups: Group[] = React.useMemo(() => {
-    const groupSize = Math.ceil(members.length / 10);
     const teams: Group[] = [];
     
-    for (let i = 0; i < 10; i++) {
-      const startIndex = i * groupSize;
-      const endIndex = Math.min(startIndex + groupSize, members.length);
-      const teamMembers = members.slice(startIndex, endIndex);
+    cookingGroupsData.forEach((groupData: any) => {
+      const { groupNumber } = groupData;
       
-      if (teamMembers.length > 0) {
-        const captain = teamMembers[0];
-        const restMembers = teamMembers.slice(1);
+      // Find all captains
+      const captains: Member[] = [];
+      groupData.captains.forEach((captainName: string) => {
+        let captain = findMemberByName(captainName);
         
-        teams.push({
-          id: `team-${i + 1}`,
-          name: teamNames[i],
-          captain,
-          members: restMembers,
-        });
-      }
-    }
+        if (!captain) {
+          console.log(`Captain not found: ${captainName}`);
+          captain = {
+            id: `captain-${groupNumber}-${captainName.replace(/\s+/g, '-')}`,
+            name: captainName,
+            role: 'Cooking Captain',
+            photo: 'ids/default.jpg',
+            phone: '',
+            email: '',
+            address: 'Details not available',
+            bloodGroup: '',
+          };
+        }
+        captains.push(captain);
+      });
+      
+      // Find all members in this group (all 10 members)
+      const groupMembers: Member[] = [];
+      groupData.members.forEach((memberName: string) => {
+        const member = findMemberByName(memberName);
+        if (member) {
+          groupMembers.push(member);
+        } else {
+          // Create placeholder for missing member
+          console.log(`Member not found: ${memberName}`);
+          groupMembers.push({
+            id: `member-${groupNumber}-${memberName.replace(/\s+/g, '-')}`,
+            name: memberName,
+            role: 'Member',
+            photo: 'ids/default.jpg',
+            phone: '',
+            email: '',
+            address: 'Details not available',
+            bloodGroup: '',
+          });
+        }
+      });
+      
+      teams.push({
+        id: `group-${groupData.groupNumber}`,
+        name: `Group ${groupData.groupNumber}`,
+        captains,
+        members: groupMembers,
+      });
+    });
     
     return teams;
   }, [members]);
@@ -258,60 +318,80 @@ const DirectoryScreen: React.FC<Props> = ({ navigation }) => {
             const isExpanded = expandedGroupId === item.id;
             return (
               <View style={styles.groupCard}>
+                {/* Group Header */}
+                <View style={styles.groupHeaderTop}>
+                  <View style={styles.groupTitleRow}>
+                    <View style={styles.groupIconContainer}>
+                      <Ionicons name="people" size={18} color="#FFF" />
+                    </View>
+                    <Text style={styles.groupTitle}>{item.name}</Text>
+                    <View style={styles.memberCountBadge}>
+                      <Text style={styles.memberCountText}>{item.members.length}</Text>
+                    </View>
+                  </View>
+                </View>
+
+                {/* Captains Section */}
+                <View style={styles.captainsSection}>
+                  <Text style={styles.captainsSectionTitle}>
+                    👑 Captain{item.captains.length > 1 ? 's' : ''}
+                  </Text>
+                  {item.captains.map((captain, idx) => (
+                    <TouchableOpacity
+                      key={captain.id}
+                      style={styles.captainCard}
+                      onPress={() => navigation.navigate('MemberDetail', { member: captain })}
+                      activeOpacity={0.7}
+                    >
+                      <Image source={getImage(captain.photo || 'ids/default.jpg')} style={styles.captainAvatar} />
+                      <View style={styles.captainInfo}>
+                        <Text style={styles.captainNameText}>{captain.name || 'Unknown'}</Text>
+                        <Text style={styles.captainPhoneText}>{captain.phone || 'Not available'}</Text>
+                      </View>
+                      <Ionicons name="chevron-forward" size={18} color="#999" />
+                    </TouchableOpacity>
+                  ))}
+                </View>
+
+                {/* Expand/Collapse Button */}
                 <TouchableOpacity
-                  style={styles.groupHeader}
+                  style={styles.expandButton}
                   onPress={() => setExpandedGroupId(isExpanded ? null : item.id)}
                   activeOpacity={0.7}
                 >
-                  <View style={styles.teamInfoSection}>
-                    <View style={styles.teamNameContainer}>
-                      <Ionicons name="shield" size={20} color="#6B46C1" />
-                      <Text style={styles.teamName}>{item.name}</Text>
-                    </View>
-                    <View style={styles.captainInfoRow}>
-                      <Image source={getImage(item.captain.photo)} style={styles.captainPhoto} />
-                      <View style={styles.captainDetails}>
-                        <Text style={styles.captainLabel}>Captain</Text>
-                        <Text style={styles.captainName}>{item.captain.name}</Text>
-                        <Text style={styles.captainPhone}>{item.captain.phone}</Text>
-                      </View>
-                    </View>
-                  </View>
-                  <View style={styles.groupRightSection}>
-                    <View style={styles.groupBadge}>
-                      <Text style={styles.groupBadgeText}>{item.members.length + 1}</Text>
-                      <Text style={styles.groupBadgeLabel}>Members</Text>
-                    </View>
-                    <Ionicons 
-                      name={isExpanded ? "chevron-up" : "chevron-down"} 
-                      size={24} 
-                      color="#6B46C1" 
-                    />
-                  </View>
+                  <Text style={styles.expandButtonText}>
+                    {isExpanded ? 'Hide Members' : 'View All Members'}
+                  </Text>
+                  <Ionicons 
+                    name={isExpanded ? "chevron-up" : "chevron-down"} 
+                    size={20} 
+                    color="#6B46C1" 
+                  />
                 </TouchableOpacity>
                 
                 {isExpanded && (
-                  <View style={styles.groupMembers}>
+                  <View style={styles.membersSection}>
                     <View style={styles.membersDivider} />
-                    <Text style={styles.membersHeader}>Team Members</Text>
-                    {item.members.map((member, index) => (
-                      <TouchableOpacity
-                        key={member.id}
-                        style={styles.groupMemberItem}
-                        onPress={() => navigation.navigate('MemberDetail', { member })}
-                        activeOpacity={0.7}
-                      >
-                        <View style={styles.memberNumber}>
-                          <Text style={styles.memberNumberText}>{index + 1}</Text>
-                        </View>
-                        <Image source={getImage(member.photo)} style={styles.groupMemberPhoto} />
-                        <View style={styles.groupMemberInfo}>
-                          <Text style={styles.groupMemberName} numberOfLines={1}>{member.name}</Text>
-                          <Text style={styles.groupMemberPhone}>{member.phone}</Text>
-                        </View>
-                        <Ionicons name="chevron-forward" size={18} color="#999" />
-                      </TouchableOpacity>
-                    ))}
+                    <View style={styles.membersListContainer}>
+                      {item.members.map((member, index) => (
+                        <TouchableOpacity
+                          key={member.id}
+                          style={styles.memberItemCard}
+                          onPress={() => navigation.navigate('MemberDetail', { member })}
+                          activeOpacity={0.7}
+                        >
+                          <View style={styles.memberIndexBadge}>
+                            <Text style={styles.memberIndexText}>{index + 1}</Text>
+                          </View>
+                          <Image source={getImage(member.photo || 'ids/default.jpg')} style={styles.memberAvatar} />
+                          <View style={styles.memberDetails}>
+                            <Text style={styles.memberNameText} numberOfLines={1}>{member.name || 'Unknown'}</Text>
+                            <Text style={styles.memberPhoneText}>{member.phone || 'Not available'}</Text>
+                          </View>
+                          <Ionicons name="chevron-forward" size={16} color="#BBB" />
+                        </TouchableOpacity>
+                      ))}
+                    </View>
                   </View>
                 )}
               </View>
@@ -455,149 +535,163 @@ const styles = StyleSheet.create({
     color: '#6B46C1',
   },
   groupCard: {
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#fff',
     borderRadius: 20,
     marginBottom: 16,
     overflow: 'hidden',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.08,
-    shadowRadius: 8,
-    elevation: 3,
+    shadowColor: '#6B46C1',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.1,
+    shadowRadius: 12,
+    elevation: 6,
   },
-  groupHeader: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    padding: 18,
+  groupHeaderTop: {
+    backgroundColor: '#6B46C1',
+    paddingVertical: 14,
+    paddingHorizontal: 18,
   },
-  teamInfoSection: {
-    flex: 1,
-  },
-  teamNameContainer: {
+  groupTitleRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 8,
-    marginBottom: 12,
+    gap: 10,
   },
-  teamName: {
+  groupIconContainer: {
+    width: 32,
+    height: 32,
+    borderRadius: 16,
+    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  groupTitle: {
     fontSize: 18,
     fontWeight: '700',
-    color: '#6B46C1',
-  },
-  captainInfoRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 12,
-  },
-  captainPhoto: {
-    width: 56,
-    height: 56,
-    borderRadius: 28,
-    borderWidth: 3,
-    borderColor: '#FFB800',
-  },
-  captainDetails: {
+    color: '#FFFFFF',
     flex: 1,
   },
-  captainLabel: {
-    fontSize: 11,
-    color: '#FFB800',
-    fontWeight: '700',
-    marginBottom: 2,
-    letterSpacing: 0.8,
-    textTransform: 'uppercase',
+  memberCountBadge: {
+    backgroundColor: '#FFB800',
+    paddingHorizontal: 12,
+    paddingVertical: 4,
+    borderRadius: 12,
+    minWidth: 40,
+    alignItems: 'center',
   },
-  captainName: {
-    fontSize: 16,
+  memberCountText: {
+    fontSize: 14,
     fontWeight: '700',
-    color: '#333',
-    marginBottom: 2,
+    color: '#1A1A1A',
   },
-  captainPhone: {
+  captainsSection: {
+    padding: 16,
+    backgroundColor: '#FAFBFF',
+  },
+  captainsSectionTitle: {
+    fontSize: 12,
+    fontWeight: '700',
+    color: '#6B46C1',
+    marginBottom: 12,
+    letterSpacing: 0.5,
+  },
+  captainCard: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#FFFFFF',
+    padding: 12,
+    borderRadius: 12,
+    marginBottom: 8,
+    borderWidth: 1,
+    borderColor: '#E8E4F3',
+  },
+  captainAvatar: {
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+    borderWidth: 2,
+    borderColor: '#FFB800',
+    marginRight: 12,
+  },
+  captainInfo: {
+    flex: 1,
+  },
+  captainNameText: {
+    fontSize: 15,
+    fontWeight: '600',
+    color: '#1A1A1A',
+    marginBottom: 3,
+  },
+  captainPhoneText: {
     fontSize: 13,
     color: '#666',
   },
-  groupRightSection: {
+  expandButton: {
+    flexDirection: 'row',
     alignItems: 'center',
-    gap: 8,
+    justifyContent: 'center',
+    paddingVertical: 12,
+    backgroundColor: '#F8F5FF',
+    borderTopWidth: 1,
+    borderTopColor: '#E8E4F3',
+    gap: 6,
   },
-  groupBadge: {
-    backgroundColor: '#F0EBFF',
-    paddingHorizontal: 12,
-    paddingVertical: 8,
-    borderRadius: 12,
-    alignItems: 'center',
-    minWidth: 60,
-  },
-  groupBadgeText: {
-    fontSize: 20,
-    fontWeight: '700',
-    color: '#6B46C1',
-  },
-  groupBadgeLabel: {
-    fontSize: 10,
+  expandButtonText: {
+    fontSize: 14,
     fontWeight: '600',
     color: '#6B46C1',
-    marginTop: 2,
   },
-  groupMembers: {
-    paddingHorizontal: 18,
-    paddingBottom: 18,
+  membersSection: {
+    backgroundColor: '#FFFFFF',
   },
   membersDivider: {
     height: 1,
-    backgroundColor: '#F0F0F0',
-    marginBottom: 12,
+    backgroundColor: '#E8E4F3',
   },
-  membersHeader: {
-    fontSize: 13,
-    fontWeight: '700',
-    color: '#999',
-    marginBottom: 8,
-    textTransform: 'uppercase',
-    letterSpacing: 1,
+  membersListContainer: {
+    padding: 12,
   },
-  groupMemberItem: {
+  memberItemCard: {
     flexDirection: 'row',
     alignItems: 'center',
     paddingVertical: 10,
     paddingHorizontal: 12,
-    borderRadius: 12,
-    backgroundColor: '#F8F9FA',
+    borderRadius: 10,
+    backgroundColor: '#FAFBFF',
     marginBottom: 8,
-    gap: 12,
+    borderWidth: 1,
+    borderColor: '#F0F0F0',
   },
-  memberNumber: {
-    width: 28,
-    height: 28,
-    borderRadius: 14,
+  memberIndexBadge: {
+    width: 26,
+    height: 26,
+    borderRadius: 13,
     backgroundColor: '#6B46C1',
     alignItems: 'center',
     justifyContent: 'center',
+    marginRight: 12,
   },
-  memberNumberText: {
+  memberIndexText: {
     fontSize: 12,
     fontWeight: '700',
     color: '#FFFFFF',
   },
-  groupMemberPhoto: {
+  memberAvatar: {
     width: 44,
     height: 44,
     borderRadius: 22,
     borderWidth: 2,
     borderColor: '#E5E5E5',
+    marginRight: 12,
   },
-  groupMemberInfo: {
+  memberDetails: {
     flex: 1,
   },
-  groupMemberName: {
+  memberNameText: {
     fontSize: 15,
     fontWeight: '600',
-    color: '#333',
+    color: '#1A1A1A',
     marginBottom: 2,
   },
-  groupMemberPhone: {
+  memberPhoneText: {
     fontSize: 13,
     color: '#666',
   },
