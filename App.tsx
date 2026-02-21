@@ -6,6 +6,7 @@ import DirectoryScreen from './screens/DirectoryScreen';
 import MemberDetailScreen from './screens/MemberDetailScreen';
 import QRScannerScreen from './screens/QRScannerScreen';
 import SplashScreen from './screens/SplashScreen';
+import CommitteeScreen from './screens/CommitteeScreen';
 
 export type Member = {
   id: string;
@@ -19,9 +20,10 @@ export type Member = {
 };
 
 export type RootStackParamList = {
-  Directory: undefined;
+  Directory: { viewMode?: 'members' | 'groups' } | undefined;
   MemberDetail: { member: Member };
   QRScanner: undefined;
+  Committee: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -45,6 +47,7 @@ export default function App() {
         <Stack.Screen name="Directory" component={DirectoryScreen} />
         <Stack.Screen name="MemberDetail" component={MemberDetailScreen} />
         <Stack.Screen name="QRScanner" component={QRScannerScreen} />
+        <Stack.Screen name="Committee" component={CommitteeScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

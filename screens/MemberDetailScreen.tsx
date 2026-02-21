@@ -20,6 +20,7 @@ import ViewShot from 'react-native-view-shot';
 import QRCode from 'react-native-qrcode-svg';
 import { getImage } from '../utils/imageHelper';
 import { Member } from './DirectoryScreen';
+import { scaleFont, moderateScale, spacing, wp, hp } from '../utils/responsive';
 
 type RootStackParamList = {
   Directory: undefined;
@@ -159,7 +160,7 @@ const MemberDetailScreen: React.FC<Props> = ({ navigation, route }) => {
           {isPlaceholder && (
             <View style={styles.placeholderBadge}>
               <Ionicons name="information-circle" size={16} color="#FF6B6B" />
-              <Text style={styles.placeholderText}>Details not available</Text>
+              <Text style={[styles.placeholderText, { marginLeft: 5 }]}>Details not available</Text>
             </View>
           )}
         </View>
@@ -242,26 +243,26 @@ const styles = StyleSheet.create({
   },
   qrCodeCard: {
     backgroundColor: '#fff',
-    padding: 30,
+    padding: spacing.xxl,
     alignItems: 'center',
     justifyContent: 'center',
   },
   qrCardTitle: {
-    fontSize: 20,
+    fontSize: scaleFont(20),
     fontWeight: 'bold',
     color: '#333',
-    marginBottom: 20,
+    marginBottom: spacing.lg,
     textAlign: 'center',
   },
   qrCardSubtitle: {
-    fontSize: 14,
+    fontSize: scaleFont(14),
     color: '#666',
-    marginTop: 20,
+    marginTop: spacing.lg,
     textAlign: 'center',
   },
   header: {
     backgroundColor: '#fff',
-    padding: 20,
+    padding: spacing.lg,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -269,18 +270,18 @@ const styles = StyleSheet.create({
     borderBottomColor: '#E0E0E0',
   },
   backButton: {
-    padding: 5,
+    padding: spacing.xs,
   },
   shareButton: {
-    padding: 5,
+    padding: spacing.xs,
   },
   logo: {
-    width: 40,
-    height: 40,
-    borderRadius: 20,
+    width: moderateScale(40),
+    height: moderateScale(40),
+    borderRadius: moderateScale(20),
   },
   headerTitle: {
-    fontSize: 20,
+    fontSize: scaleFont(20),
     fontWeight: 'bold',
     color: '#333',
     flex: 1,
@@ -293,51 +294,51 @@ const styles = StyleSheet.create({
   profileSection: {
     backgroundColor: '#fff',
     alignItems: 'center',
-    paddingVertical: 30,
+    paddingVertical: spacing.xxl,
     borderBottomWidth: 1,
     borderBottomColor: '#E0E0E0',
   },
   profilePhoto: {
-    width: 180,
-    height: 180,
-    borderRadius: 20,
-    marginBottom: 15,
+    width: moderateScale(180),
+    height: moderateScale(180),
+    borderRadius: moderateScale(20),
+    marginBottom: spacing.md,
   },
   memberName: {
-    fontSize: 24,
+    fontSize: scaleFont(24),
     fontWeight: 'bold',
     color: '#333',
-    marginBottom: 5,
+    marginBottom: spacing.xs,
     textAlign: 'center',
-    paddingHorizontal: 20,
+    paddingHorizontal: spacing.lg,
   },
   memberRole: {
-    fontSize: 16,
+    fontSize: scaleFont(16),
     color: '#666',
   },
   placeholderBadge: {
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: '#FFE5E5',
-    paddingHorizontal: 12,
-    paddingVertical: 6,
-    borderRadius: 20,
-    marginTop: 10,
-    gap: 5,
+    paddingHorizontal: spacing.md,
+    paddingVertical: spacing.xs,
+    borderRadius: moderateScale(20),
+    marginTop: spacing.sm,
+
   },
   placeholderText: {
-    fontSize: 14,
+    fontSize: scaleFont(14),
     color: '#FF6B6B',
     fontWeight: '500',
   },
   detailsContainer: {
-    padding: 20,
+    padding: spacing.lg,
   },
   detailCard: {
     backgroundColor: '#fff',
-    borderRadius: 12,
-    padding: 15,
-    marginBottom: 12,
+    borderRadius: moderateScale(12),
+    padding: spacing.md,
+    marginBottom: spacing.md,
     elevation: 2,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
@@ -349,23 +350,23 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
   },
   detailText: {
-    marginLeft: 15,
+    marginLeft: spacing.md,
     flex: 1,
   },
   detailLabel: {
-    fontSize: 14,
+    fontSize: scaleFont(14),
     color: '#999',
-    marginBottom: 4,
+    marginBottom: spacing.xs,
   },
   detailValue: {
-    fontSize: 16,
+    fontSize: scaleFont(16),
     color: '#333',
     fontWeight: '500',
   },
   actionButtons: {
     flexDirection: 'row',
-    padding: 20,
-    gap: 15,
+    padding: spacing.lg,
+    gap: spacing.md,
     backgroundColor: '#fff',
     borderTopWidth: 1,
     borderTopColor: '#E0E0E0',
@@ -376,8 +377,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 15,
-    borderRadius: 12,
+    padding: spacing.md,
+    borderRadius: moderateScale(12),
     elevation: 3,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
@@ -390,8 +391,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 15,
-    borderRadius: 12,
+    padding: spacing.md,
+    borderRadius: moderateScale(12),
     elevation: 3,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
@@ -400,9 +401,9 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: '#fff',
-    fontSize: 18,
+    fontSize: scaleFont(18),
     fontWeight: '600',
-    marginLeft: 10,
+    marginLeft: spacing.sm,
   },
   disabledButton: {
     backgroundColor: '#CCCCCC',

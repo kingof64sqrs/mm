@@ -1,7 +1,7 @@
 [
   {
     "id": "1",
-    "name": "Harshidaa Dhiresh Raichura ",
+    "name": "Harshidaa Dhiresh Raichura",
     "role": "President",
     "photo": "ids/IMG-1-9fe00815.jpg",
     "phone": "9894560333",
@@ -14,10 +14,10 @@
   },
   {
     "id": "2",
-    "name": "Avani sujal Shah",
+    "name": "Avani Sujal Shah",
     "role": "President",
     "photo": "ids/IMG-2-c6b2ba36.jpg",
-    "phone": "+91 93451 39204",
+    "phone": "+919345139204",
     "email": "avanishah75@gmail.com",
     "address": "Taru chhaya, 17 Member venkatachalm street, K. K. Pudur, Coimbatore 641038",
     "bloodGroup": "O+",
@@ -53,7 +53,7 @@
   },
   {
     "id": "5",
-    "name": "SUDHA V DAGLI",
+    "name": "Sudha V Dagli",
     "role": "Member",
     "photo": "ids/IMG-20260101-WA0027.jpg",
     "phone": "9361212053",
@@ -157,7 +157,7 @@
   },
   {
     "id": "13",
-    "name": "RIDDHI PARIKH",
+    "name": "Riddhi Parikh",
     "role": "Member",
     "photo": "ids/IMG-20260101-WA0049.jpg",
     "phone": "9789080221",
@@ -170,7 +170,7 @@
   },
   {
     "id": "14",
-    "name": "Rupal.Amish.sheth",
+    "name": "Rupal.Amish.Sheth",
     "role": "Member",
     "photo": "ids/IMG-20260101-WA0050.jpg",
     "phone": "9843227301",
@@ -209,7 +209,7 @@
   },
   {
     "id": "17",
-    "name": "Geetha Mahendra patel",
+    "name": "Geetha Mahendra Patel",
     "role": "Member",
     "photo": "ids/IMG-20260101-WA0051.jpg",
     "phone": "8940914678",
@@ -274,7 +274,7 @@
   },
   {
     "id": "22",
-    "name": " Chandana Rajpal Abhaichand",
+    "name": "Chandana Rajpal Abhaichand",
     "role": "Member",
     "photo": "ids/IMG-20260101-WA0060.jpg",
     "phone": "9944133433",
@@ -300,7 +300,7 @@
   },
   {
     "id": "24",
-    "name": "MEERA J DAVDA",
+    "name": "Meera J Davda",
     "role": "Member",
     "photo": "ids/IMG-20260101-WA0063.jpg",
     "phone": "9362929292",
@@ -326,7 +326,7 @@
   },
   {
     "id": "26",
-    "name": " Nita Ashwin Shah",
+    "name": "Nita Ashwin Shah",
     "role": "Member",
     "photo": "ids/IMG-20260101-WA0067.jpg",
     "phone": "9843013353",
@@ -378,7 +378,7 @@
   },
   {
     "id": "31",
-    "name": "REKHA VAIDYA",
+    "name": "Rekha Vaidya",
     "role": "Member",
     "photo": "ids/IMG-20260101-WA0074.jpg",
     "phone": "9773286683",
@@ -391,7 +391,7 @@
   },
   {
     "id": "32",
-    "name": "ATULA VAIDYA",
+    "name": "Atula Vaidya",
     "role": "Member",
     "photo": "ids/IMG-32-4d9e4674.jpg",
     "phone": "8072075260",
@@ -417,7 +417,7 @@
   },
   {
     "id": "34",
-    "name": "Hasmitha.A.shah",
+    "name": "Hasmitha.A.Shah",
     "role": "Member",
     "photo": "ids/IMG-20260101-WA0077.jpg",
     "phone": "9043574000",
@@ -443,7 +443,7 @@
   },
   {
     "id": "36",
-    "name": "Deepti samir Dave",
+    "name": "Deepti Samir Dave",
     "role": "Member",
     "photo": "ids/IMG-36-1b585007.jpg",
     "phone": "9488417942",
@@ -469,7 +469,7 @@
   },
   {
     "id": "38",
-    "name": "REKHA RATHOD",
+    "name": "Rekha Rathod",
     "role": "Member",
     "photo": "ids/IMG-20260101-WA0090.jpg",
     "phone": "9092083202",
@@ -482,7 +482,7 @@
   },
   {
     "id": "39",
-    "name": "Mepani seeta prakash",
+    "name": "Mepani Seeta Prakash",
     "role": "Member",
     "photo": "ids/IMG-20260101-WA0091.jpg",
     "phone": "9345597124",
@@ -534,7 +534,7 @@
   },
   {
     "id": "43",
-    "name": "Rinky shah",
+    "name": "Rinky Shah",
     "role": "Member",
     "photo": "ids/IMG-43-d2a4bcc7.jpg",
     "phone": "9940500462",
@@ -586,7 +586,7 @@
   },
   {
     "id": "47",
-    "name": "Anjana v gajjar",
+    "name": "Anjana V Gajjar",
     "role": "Member",
     "photo": "ids/IMG-20260101-WA0124.jpg",
     "phone": "9842431452",
@@ -599,7 +599,7 @@
   },
   {
     "id": "48",
-    "name": "HEENA RAHUL",
+    "name": "Heena Rahul",
     "role": "Member",
     "photo": "ids/IMG-20260101-WA0123.jpg",
     "phone": "9344833872",
@@ -677,7 +677,7 @@
   },
   {
     "id": "54",
-    "name": "Monica Manish shah",
+    "name": "Monica Manish Shah",
     "role": "Member",
     "photo": "ids/IMG-20260101-WA0110.jpg",
     "phone": "9894051564",
@@ -690,13 +690,13 @@
   },
   {
     "id": "55",
-    "name": "Binal Saurin shah",
+    "name": "Binal Saurin Shah",
     "role": "Member",
     "photo": "ids/IMG-20260101-WA0108.jpg",
     "phone": "9952410076",
     "email": "binalsaurin@hotmail.com",
     "address": "Binal Saurin shah. 9952410076 \nB 202 Bafna courts apartment \n119 Ponnurangam Road west \nOpp syndicate bank\nR S Puram \n Coimbatore. 641002\n\n",
-    "bloodGroup": "\nO+.  ",
+    "bloodGroup": "O+",
     "groupNumber": 45,
     "groupName": "Cooking Group 45",
     "groupRole": "captain"
@@ -755,7 +755,7 @@
   },
   {
     "id": "60",
-    "name": "Krupa p vachhani",
+    "name": "Krupa P Vachhani",
     "role": "Member",
     "photo": "ids/IMG-20260101-WA0098.jpg",
     "phone": "9443131407",
@@ -768,7 +768,7 @@
   },
   {
     "id": "61",
-    "name": "Anjana Nirov sheth",
+    "name": "Anjana Nirov Sheth",
     "role": "Member",
     "photo": "ids/IMG-61-0a67143a.jpg",
     "phone": "9489910901",
@@ -820,7 +820,7 @@
   },
   {
     "id": "65",
-    "name": "Bhanu subhash shah",
+    "name": "Bhanu Subhash Shah",
     "role": "Member",
     "photo": "ids/IMG-20260101-WA0104.jpg",
     "phone": "9894110510",
@@ -859,7 +859,7 @@
   },
   {
     "id": "68",
-    "name": "Sima J shah",
+    "name": "Sima J Shah",
     "role": "Member",
     "photo": "ids/IMG-68-d826d630.jpg",
     "phone": "9600512526",
@@ -872,7 +872,7 @@
   },
   {
     "id": "70",
-    "name": "Pratiksha vipul joshi",
+    "name": "Pratiksha Vipul Joshi",
     "role": "Member",
     "photo": "ids/IMG-20260101-WA0115.jpg",
     "phone": "9894013194",
@@ -937,7 +937,7 @@
   },
   {
     "id": "75",
-    "name": "Kajal patel",
+    "name": "Kajal Patel",
     "role": "Member",
     "photo": "ids/IMG-20260101-WA0120.jpg",
     "phone": "9043522522",
@@ -989,7 +989,7 @@
   },
   {
     "id": "79",
-    "name": "Bhavana.M.kalaria",
+    "name": "Bhavana.M.Kalaria",
     "role": "Member",
     "photo": "ids/IMG-20260104-WA0009.jpg",
     "phone": "9487709029",
@@ -1015,7 +1015,7 @@
   },
   {
     "id": "81",
-    "name": "chaya prakash kapasi",
+    "name": "Chaya Prakash Kapasi",
     "role": "Member",
     "photo": "ids/IMG-20260101-WA0137.jpg",
     "phone": "9597816384",
@@ -1041,7 +1041,7 @@
   },
   {
     "id": "83",
-    "name": "Trupti.A.Parikh . E8, 8th floor Diamond city, Vyoma apartment, poozaripalayam, comibatore 641003. Blood group -A1rh+",
+    "name": "Trupti.A.Parikh . E8, 8th Floor Diamond City, Vyoma Apartment, Poozaripalayam, Comibatore 641003. Blood Group -a1rh+",
     "role": "Member",
     "photo": "ids/IMG-20260102-WA0001.jpg",
     "phone": "9843023104",
@@ -1119,7 +1119,7 @@
   },
   {
     "id": "89",
-    "name": "Vinnie Karthik shah",
+    "name": "Vinnie Karthik Shah",
     "role": "Member",
     "photo": "ids/IMG-89-4a570889.jpg",
     "phone": "9884620101",
@@ -1184,7 +1184,7 @@
   },
   {
     "id": "94",
-    "name": "Jyothi v popat",
+    "name": "Jyothi V Popat",
     "role": "Member",
     "photo": "ids/IMG-94-5f0b3892.jpg",
     "phone": "9344055864",
@@ -1223,7 +1223,7 @@
   },
   {
     "id": "97",
-    "name": "Kokila pujara",
+    "name": "Kokila Pujara",
     "role": "Member",
     "photo": "ids/IMG-20260102-WA0017.jpg",
     "phone": "9787772195",
@@ -1314,7 +1314,7 @@
   },
   {
     "id": "105",
-    "name": "zarana N Patel",
+    "name": "Zarana N Patel",
     "role": "Member",
     "photo": "ids/IMG-20260102-WA0027.jpg",
     "phone": "9344718711",
@@ -1340,7 +1340,7 @@
   },
   {
     "id": "107",
-    "name": "Priyanka sailesh patel",
+    "name": "Priyanka Sailesh Patel",
     "role": "Member",
     "photo": "ids/IMG-20260102-WA0029.jpg",
     "phone": "9677539964",
@@ -1366,7 +1366,7 @@
   },
   {
     "id": "109",
-    "name": "chandrika",
+    "name": "Chandrika",
     "role": "Member",
     "photo": "ids/IMG-109-89388b5c.jpg",
     "phone": "9043714246",
@@ -1463,7 +1463,7 @@
     "phone": "9944906500",
     "email": "vishaldesai48@gmail.com",
     "address": "Nanda M Desai\n94/55 B1 Harshamana Park Vilasini Appartments \nBharati Park Road 2 \nSai Baba Colony\nCoimbatore 641043\n",
-    "bloodGroup": " 0+",
+    "bloodGroup": "O+",
     "groupNumber": 41,
     "groupName": "Cooking Group 41",
     "groupRole": "member"
@@ -1483,7 +1483,7 @@
   },
   {
     "id": "119",
-    "name": "Bhavana dilip patel",
+    "name": "Bhavana Dilip Patel",
     "role": "Member",
     "photo": "ids/IMG-20260102-WA0042.jpg",
     "phone": "9487505521",
@@ -1509,7 +1509,7 @@
   },
   {
     "id": "121",
-    "name": "Asha k mehta",
+    "name": "Asha K Mehta",
     "role": "Member",
     "photo": "ids/IMG-20260102-WA0044.jpg",
     "phone": "7845948451",
@@ -1535,7 +1535,7 @@
   },
   {
     "id": "123",
-    "name": "Alka.D.shah",
+    "name": "Alka.D.Shah",
     "role": "Member",
     "photo": "ids/IMG-20260102-WA0047.jpg",
     "phone": "9487539880",
@@ -1548,7 +1548,7 @@
   },
   {
     "id": "124",
-    "name": "Bharati bala. N.Tolia",
+    "name": "Bharati Bala. N.Tolia",
     "role": "Member",
     "photo": "ids/IMG-20260102-WA0048.jpg",
     "phone": "7904975965",
@@ -1587,7 +1587,7 @@
   },
   {
     "id": "127",
-    "name": " Chhaya G Rawal",
+    "name": "Chhaya G Rawal",
     "role": "Member",
     "photo": "ids/IMG-127-78f8400e.jpg",
     "phone": "9092335164",
@@ -1613,7 +1613,7 @@
   },
   {
     "id": "129",
-    "name": "Punita k nandola",
+    "name": "Punita K Nandola",
     "role": "Member",
     "photo": "ids/IMG-20260102-WA0053.jpg",
     "phone": "9788175136",
@@ -1704,7 +1704,7 @@
   },
   {
     "id": "137",
-    "name": "Kanchan sanjay patel",
+    "name": "Kanchan Sanjay Patel",
     "role": "Member",
     "photo": "ids/IMG-20260104-WA0003.jpg",
     "phone": "9655867321",
@@ -1749,7 +1749,7 @@
     "phone": "9987866667",
     "email": "latha @gmail. Co\n",
     "address": "Latha Atul Kumar Tolia \nProzone Palms \nS-1505  14th Floor\n \"Splendour\"\nSati road, behind Prozone mall\nSaravanampatti\nCoimbatore - 641 035\n",
-    "bloodGroup": "\nO+\n",
+    "bloodGroup": "O+",
     "groupNumber": 5,
     "groupName": "Cooking Group 5",
     "groupRole": "member"
@@ -1912,7 +1912,7 @@
   },
   {
     "id": "153",
-    "name": "Bhavini jatin mehta",
+    "name": "Bhavini Jatin Mehta",
     "role": "Member",
     "photo": "ids/IMG-20260102-WA0074.jpg",
     "phone": "7845682300",
@@ -2003,7 +2003,7 @@
   },
   {
     "id": "160",
-    "name": "Minal Rajesh shah",
+    "name": "Minal Rajesh Shah",
     "role": "Member",
     "photo": "ids/IMG-20260102-WA0081.jpg",
     "phone": "9443132572",
@@ -2016,7 +2016,7 @@
   },
   {
     "id": "161",
-    "name": "Parul tejpal shah",
+    "name": "Parul Tejpal Shah",
     "role": "Member",
     "photo": "ids/IMG-161-be5dffc1.jpg",
     "phone": "9843511337",
@@ -2133,7 +2133,7 @@
   },
   {
     "id": "170",
-    "name": "Leena Bharat khakhar",
+    "name": "Leena Bharat Khakhar",
     "role": "Member",
     "photo": "ids/IMG-20260102-WA0093.jpg",
     "phone": "7200824341",
@@ -2159,7 +2159,7 @@
   },
   {
     "id": "172",
-    "name": "Amita Rishikesh khakhar",
+    "name": "Amita Rishikesh Khakhar",
     "role": "Member",
     "photo": "ids/IMG-20260102-WA0095.jpg",
     "phone": "8072525593",
@@ -2172,7 +2172,7 @@
   },
   {
     "id": "173",
-    "name": "LATA PRAVIN AIYA",
+    "name": "Lata Pravin Aiya",
     "role": "Member",
     "photo": "ids/IMG-173-10690c42.jpg",
     "phone": "9843023797",
@@ -2224,7 +2224,7 @@
   },
   {
     "id": "177",
-    "name": "VIJAL B VYAS",
+    "name": "Vijal B Vyas",
     "role": "Member",
     "photo": "ids/IMG-177-e8fcec1c.jpg",
     "phone": "9087567344",
@@ -2250,7 +2250,7 @@
   },
   {
     "id": "179",
-    "name": " Purva .R.Dhruv",
+    "name": "Purva .R.Dhruv",
     "role": "Member",
     "photo": "ids/IMG-20260102-WA0128.jpg",
     "phone": "8825918773",
@@ -2276,7 +2276,7 @@
   },
   {
     "id": "181",
-    "name": "Aarti v Radia",
+    "name": "Aarti V Radia",
     "role": "Member",
     "photo": "ids/IMG-181-f3f5be3b.jpg",
     "phone": "7708652148",
@@ -2302,7 +2302,7 @@
   },
   {
     "id": "183",
-    "name": "JAYASHREE SATISH VYAS,",
+    "name": "Jayashree Satish Vyas,",
     "role": "Member",
     "photo": "ids/IMG-20260102-WA0124.jpg",
     "phone": "9688871117",
@@ -2315,7 +2315,7 @@
   },
   {
     "id": "184",
-    "name": "DEEPIKA. N. DAVE",
+    "name": "Deepika. N. Dave",
     "role": "Member",
     "photo": "ids/IMG-20260102-WA0123.jpg",
     "phone": "9345147211",
@@ -2328,7 +2328,7 @@
   },
   {
     "id": "185",
-    "name": "KRISHNA.K.VACHHANI",
+    "name": "Krishna.K.Vachhani",
     "role": "Member",
     "photo": "ids/IMG-20260102-WA0135.jpg",
     "phone": "9043730211",
@@ -2341,7 +2341,7 @@
   },
   {
     "id": "186",
-    "name": "DHRUVI MANEK",
+    "name": "Dhruvi Manek",
     "role": "Member",
     "photo": "ids/IMG-20260102-WA0119.jpg",
     "phone": "8825488388",
@@ -2406,7 +2406,7 @@
   },
   {
     "id": "191",
-    "name": "KRISHNA MANEK",
+    "name": "Krishna Manek",
     "role": "Member",
     "photo": "ids/IMG-20260102-WA0116.jpg",
     "phone": "9843015394",
@@ -2445,7 +2445,7 @@
   },
   {
     "id": "194",
-    "name": "Nikita v Patel",
+    "name": "Nikita V Patel",
     "role": "Member",
     "photo": "ids/IMG-20260102-WA0114.jpg",
     "phone": "9442942409",
@@ -2471,7 +2471,7 @@
   },
   {
     "id": "196",
-    "name": "Komal alpesh sangani",
+    "name": "Komal Alpesh Sangani",
     "role": "Member",
     "photo": "ids/IMG-20260102-WA0112.jpg",
     "phone": "7639944182",
@@ -2601,7 +2601,7 @@
   },
   {
     "id": "206",
-    "name": "SAVITRI M DAVE",
+    "name": "Savitri M Dave",
     "role": "Member",
     "photo": "ids/IMG-20260102-WA0140.jpg",
     "phone": "7538836067",
@@ -2614,13 +2614,13 @@
   },
   {
     "id": "207",
-    "name": "Preethi.p.Asher",
+    "name": "Preethi.P.Asher",
     "role": "Member",
     "photo": "ids/IMG-20260102-WA0136.jpg",
     "phone": "9487576772",
     "email": "Kvd cbe @ g mail.com.\n",
     "address": "Preethi.p.Asher\nVallabh kunj\n208,Ramalingam road,east.\nR.s.puram.coimbatore\n\n\n",
-    "bloodGroup": "O negative.",
+    "bloodGroup": "",
     "groupNumber": 21,
     "groupName": "Cooking Group 21",
     "groupRole": "member"
@@ -2666,7 +2666,7 @@
   },
   {
     "id": "211",
-    "name": "Pallavi  Chandaria ",
+    "name": "Pallavi Chandaria",
     "role": "Member",
     "photo": "ids/IMG-20260102-WA0142.jpg",
     "phone": "9994159071",
@@ -2731,7 +2731,7 @@
   },
   {
     "id": "216",
-    "name": "Pooja kanteliya",
+    "name": "Pooja Kanteliya",
     "role": "Member",
     "photo": "ids/IMG-20260102-WA0147.jpg",
     "phone": "8217605882",
@@ -2763,7 +2763,7 @@
     "phone": "9788958651",
     "email": "",
     "address": "Name\nNirmala. V.Rathod \n22-Devanga  high school Road. \nR.S.PURAM \nCOIMBATORE. 641002.\n",
-    "bloodGroup": " 0 +\n",
+    "bloodGroup": "O+",
     "groupNumber": 48,
     "groupName": "Cooking Group 48",
     "groupRole": "member"
@@ -2783,7 +2783,7 @@
   },
   {
     "id": "220",
-    "name": " Daksha Dilip Shah",
+    "name": "Daksha Dilip Shah",
     "role": "Member",
     "photo": "ids/IMG-20260102-WA0152.jpg",
     "phone": "9345759798",
@@ -2809,7 +2809,7 @@
   },
   {
     "id": "222",
-    "name": "kanta ketan patel",
+    "name": "Kanta Ketan Patel",
     "role": "Member",
     "photo": "ids/IMG-20260102-WA0154.jpg",
     "phone": "9944767688",
@@ -2822,7 +2822,7 @@
   },
   {
     "id": "223",
-    "name": "Hemlatha.S.patel",
+    "name": "Hemlatha.S.Patel",
     "role": "Member",
     "photo": "ids/IMG-20260102-WA0155.jpg",
     "phone": "8940042120",
@@ -2848,7 +2848,7 @@
   },
   {
     "id": "225",
-    "name": "BHAGVATHI PATEL .D",
+    "name": "Bhagvathi Patel .D",
     "role": "Member",
     "photo": "ids/IMG-20260102-WA0157.jpg",
     "phone": "9655730309",
@@ -2861,7 +2861,7 @@
   },
   {
     "id": "226",
-    "name": "bhavana anil shah",
+    "name": "Bhavana Anil Shah",
     "role": "Member",
     "photo": "ids/IMG-20260102-WA0158.jpg",
     "phone": "9894388776",
@@ -2874,7 +2874,7 @@
   },
   {
     "id": "227",
-    "name": "Vandana mukesh patel",
+    "name": "Vandana Mukesh Patel",
     "role": "Member",
     "photo": "ids/IMG-20260102-WA0159.jpg",
     "phone": "7200352703",
@@ -2900,7 +2900,7 @@
   },
   {
     "id": "229",
-    "name": "Roopa popat",
+    "name": "Roopa Popat",
     "role": "Member",
     "photo": "ids/IMG-229-941de312.jpg",
     "phone": "6381130839",
@@ -2965,7 +2965,7 @@
   },
   {
     "id": "234",
-    "name": "DAKSHA N JATAKIYA",
+    "name": "Daksha N Jatakiya",
     "role": "Member",
     "photo": "ids/IMG-20260102-WA0170.jpg",
     "phone": "9382944440",
@@ -3056,7 +3056,7 @@
   },
   {
     "id": "241",
-    "name": "PARMAR SONAL MANISH BHAI",
+    "name": "Parmar Sonal Manish Bhai",
     "role": "Member",
     "photo": "ids/IMG-241-baaae8ba.jpg",
     "phone": "9043698135",
@@ -3095,7 +3095,7 @@
   },
   {
     "id": "244",
-    "name": "DHEERA R PANDYA",
+    "name": "Dheera R Pandya",
     "role": "Member",
     "photo": "ids/IMG-20260103-WA0016.jpg",
     "phone": " 9487955905 \n",
@@ -3114,7 +3114,7 @@
     "phone": "7530055223",
     "email": "chakku82.krs@gmail.com",
     "address": "Krupa R Sanghani\n33L, Goldmist apartment venkatasamy Road (west)\nR S Puram\nCoimbatore -641002\n",
-    "bloodGroup": " o+ve",
+    "bloodGroup": "O+",
     "groupNumber": 22,
     "groupName": "Cooking Group 22",
     "groupRole": "member"
@@ -3127,7 +3127,7 @@
     "phone": "9978637683",
     "email": "",
     "address": "Avani Shukla\n1/9, Venkateshwara Nagar,\nVellalore - Cbe 641111.\n\n",
-    "bloodGroup": "\nBG- O+",
+    "bloodGroup": "O+",
     "groupNumber": 50,
     "groupName": "Cooking Group 50",
     "groupRole": "member"
@@ -3199,7 +3199,7 @@
   },
   {
     "id": "252",
-    "name": "RASILA SATISH RAICHURA",
+    "name": "Rasila Satish Raichura",
     "role": "Member",
     "photo": "ids/IMG-20260103-WA0027.jpg",
     "phone": "9360470519",
@@ -3264,7 +3264,7 @@
   },
   {
     "id": "257",
-    "name": "jashavanti mavji",
+    "name": "Jashavanti Mavji",
     "role": "Member",
     "photo": "ids/IMG-20260103-WA0034.jpg",
     "phone": "9952345842",
@@ -3303,7 +3303,7 @@
   },
   {
     "id": "260",
-    "name": "Sneha kishan kaneria",
+    "name": "Sneha Kishan Kaneria",
     "role": "Member",
     "photo": "ids/IMG-20260103-WA0038.jpg",
     "phone": "8460022235",
@@ -3316,7 +3316,7 @@
   },
   {
     "id": "261",
-    "name": "Sevina Jitesh kaneria",
+    "name": "Sevina Jitesh Kaneria",
     "role": "Member",
     "photo": "ids/IMG-20260103-WA0039.jpg",
     "phone": "7667345503",
@@ -3342,7 +3342,7 @@
   },
   {
     "id": "263",
-    "name": "Sobhanaben k vachhani",
+    "name": "Sobhanaben K Vachhani",
     "role": "Member",
     "photo": "ids/IMG-20260103-WA0041.jpg",
     "phone": "9487927731",
@@ -3420,7 +3420,7 @@
   },
   {
     "id": "269",
-    "name": "Beena k Shah",
+    "name": "Beena K Shah",
     "role": "Member",
     "photo": "ids/IMG-20260103-WA0086.jpg",
     "phone": "9443322879",
@@ -3485,7 +3485,7 @@
   },
   {
     "id": "274",
-    "name": "Bhagwati M Sanghrajka \n\n\n\n",
+    "name": "Bhagwati M Sanghrajka",
     "role": "Member",
     "photo": "ids/IMG-274-e25a852d.jpg",
     "phone": "8489965000",
@@ -3524,7 +3524,7 @@
   },
   {
     "id": "277",
-    "name": "KALPANA . S . BAVISHI",
+    "name": "Kalpana . S . Bavishi",
     "role": "Member",
     "photo": "ids/IMG-277-66c01603.jpg",
     "phone": "9487580807",
@@ -3537,7 +3537,7 @@
   },
   {
     "id": "278",
-    "name": " Shobha Kamlesh Padhiar",
+    "name": "Shobha Kamlesh Padhiar",
     "role": "Member",
     "photo": "ids/IMG-278-b6aeea8a.jpg",
     "phone": "9487938241",
@@ -3563,7 +3563,7 @@
   },
   {
     "id": "280",
-    "name": "Pragna k Sanghvi",
+    "name": "Pragna K Sanghvi",
     "role": "Member",
     "photo": "ids/IMG-280-29c7fe43.jpg",
     "phone": "9360093000",
@@ -3615,7 +3615,7 @@
   },
   {
     "id": "284",
-    "name": "Sona suchak",
+    "name": "Sona Suchak",
     "role": "Member",
     "photo": "ids/IMG-20260103-WA0084.jpg",
     "phone": "9372605350",
@@ -3680,7 +3680,7 @@
   },
   {
     "id": "289",
-    "name": "Sadhnaben thakkar",
+    "name": "Sadhnaben Thakkar",
     "role": "Member",
     "photo": "ids/IMG-20260103-WA0094.jpg",
     "phone": "9842222586",
@@ -3706,7 +3706,7 @@
   },
   {
     "id": "291",
-    "name": "Bhartiben j. Oza",
+    "name": "Bhartiben J. Oza",
     "role": "Member",
     "photo": "ids/IMG-20260103-WA0019.jpg",
     "phone": "9047011650",
@@ -3719,7 +3719,7 @@
   },
   {
     "id": "292",
-    "name": "Mamta lalan",
+    "name": "Mamta Lalan",
     "role": "Member",
     "photo": "ids/IMG-20260103-WA0010.jpg",
     "phone": "9677731970",
@@ -3758,7 +3758,7 @@
   },
   {
     "id": "295",
-    "name": "alpa .j.patel",
+    "name": "Alpa .J.Patel",
     "role": "Member",
     "photo": "ids/IMG-295-50bb8b54.jpg",
     "phone": "9500269897",
@@ -3771,7 +3771,7 @@
   },
   {
     "id": "296",
-    "name": "Jyoti krishnakumar",
+    "name": "Jyoti Krishnakumar",
     "role": "Member",
     "photo": "ids/IMG-20260103-WA0106.jpg",
     "phone": "9363106876",
@@ -3784,7 +3784,7 @@
   },
   {
     "id": "297",
-    "name": "Bhavana deepak sukhadiya",
+    "name": "Bhavana Deepak Sukhadiya",
     "role": "Member",
     "photo": "ids/IMG-20260103-WA0108.jpg",
     "phone": "8667348318",
@@ -3836,7 +3836,7 @@
   },
   {
     "id": "301",
-    "name": "Avani vipul Kumar Acharya",
+    "name": "Avani Vipul Kumar Acharya",
     "role": "Member",
     "photo": "ids/IMG-301-7f64d091.jpg",
     "phone": "9409575384",
@@ -3875,7 +3875,7 @@
   },
   {
     "id": "304",
-    "name": "Kalpana patel",
+    "name": "Kalpana Patel",
     "role": "Member",
     "photo": "ids/IMG-20260104-WA0025.jpg",
     "phone": "9500899865",
@@ -3901,7 +3901,7 @@
   },
   {
     "id": "306",
-    "name": "Zeel jinesh dattani",
+    "name": "Zeel Jinesh Dattani",
     "role": "Member",
     "photo": "ids/IMG-306-90147f6e.jpg",
     "phone": "9099316624",
@@ -3940,7 +3940,7 @@
   },
   {
     "id": "309",
-    "name": "KALPA Shankar Iyer",
+    "name": "Kalpa Shankar Iyer",
     "role": "Member",
     "photo": "ids/IMG-309-f8ad3db4.jpg",
     "phone": "8428322811",
@@ -3953,7 +3953,7 @@
   },
   {
     "id": "310",
-    "name": "LATHA NILESH POKAR",
+    "name": "Latha Nilesh Pokar",
     "role": "Member",
     "photo": "ids/IMG-310-3371b16f.jpg",
     "phone": "9150313536",
@@ -3992,7 +3992,7 @@
   },
   {
     "id": "313",
-    "name": "Beena sheth",
+    "name": "Beena Sheth",
     "role": "Member",
     "photo": "ids/IMG-20260104-WA0072.jpg",
     "phone": "9364232300",
@@ -4044,7 +4044,7 @@
   },
   {
     "id": "317",
-    "name": "LEENA H DOSHI",
+    "name": "Leena H Doshi",
     "role": "Member",
     "photo": "ids/IMG-20260104-WA0076.jpg",
     "phone": "9488443322",
@@ -4161,7 +4161,7 @@
   },
   {
     "id": "326",
-    "name": "Parul.v.Mehta",
+    "name": "Parul.V.Mehta",
     "role": "Member",
     "photo": "ids/IMG-20260104-WA0099.jpg",
     "phone": "9843342313",
@@ -4200,7 +4200,7 @@
   },
   {
     "id": "329",
-    "name": "Deepa Utpal shah",
+    "name": "Deepa Utpal Shah",
     "role": "Member",
     "photo": "ids/IMG-20260104-WA0106.jpg",
     "phone": "9843530594",
@@ -4226,7 +4226,7 @@
   },
   {
     "id": "331",
-    "name": "KINJAL J JOSHI",
+    "name": "Kinjal J Joshi",
     "role": "Member",
     "photo": "ids/IMG-20260104-WA0109.jpg",
     "phone": "9043283740",
@@ -4291,7 +4291,7 @@
   },
   {
     "id": "336",
-    "name": "Beena j shah",
+    "name": "Beena J Shah",
     "role": "Member",
     "photo": "ids/IMG-20260104-WA0123.jpg",
     "phone": "9655238101",
@@ -4460,7 +4460,7 @@
   },
   {
     "id": "352",
-    "name": " Pallavi Bhavin Rajpara",
+    "name": "Pallavi Bhavin Rajpara",
     "role": "Member",
     "photo": "ids/IMG-20260105-WA0003.jpg",
     "phone": "9875198587",
@@ -4505,7 +4505,7 @@
     "phone": "9363104247",
     "email": "dhanalakshmiraichura270@gmail.com",
     "address": "Dhanalakshmi Raichura\n4 C Stivari Diya Apartment\nFather Rhondy Street \nR S puram\nCoimbatore  641002\n",
-    "bloodGroup": " O positive",
+    "bloodGroup": "O+",
     "groupNumber": 46,
     "groupName": "Cooking Group 46",
     "groupRole": "member"
@@ -4525,7 +4525,7 @@
   },
   {
     "id": "357",
-    "name": " Shobhana S Pandya",
+    "name": "Shobhana S Pandya",
     "role": "Member",
     "photo": "ids/IMG-20260105-WA0007.jpg",
     "phone": "9360557796",
@@ -4538,7 +4538,7 @@
   },
   {
     "id": "358",
-    "name": "Devika patel",
+    "name": "Devika Patel",
     "role": "Member",
     "photo": "ids/IMG-20260105-WA0014.jpg",
     "phone": "9620953958",
@@ -4590,7 +4590,7 @@
   },
   {
     "id": "362",
-    "name": "Nikita deep Sheth",
+    "name": "Nikita Deep Sheth",
     "role": "Member",
     "photo": "ids/IMG-20260105-WA0022.jpg",
     "phone": "7010388569",
@@ -4616,7 +4616,7 @@
   },
   {
     "id": "364",
-    "name": "Pooja A shah",
+    "name": "Pooja A Shah",
     "role": "Member",
     "photo": "ids/IMG-20260105-WA0029.jpg",
     "phone": "9655777434",
@@ -4681,7 +4681,7 @@
   },
   {
     "id": "370",
-    "name": "Bhavana.p.sheth",
+    "name": "Bhavana.P.Sheth",
     "role": "Member",
     "photo": "ids/IMG-20260105-WA0032.jpg",
     "phone": "9489854118",
@@ -4733,7 +4733,7 @@
   },
   {
     "id": "374",
-    "name": "Asha A shah",
+    "name": "Asha A Shah",
     "role": "Member",
     "photo": "ids/IMG-374-3c1ed416.jpg",
     "phone": "9360667162",
@@ -4759,7 +4759,7 @@
   },
   {
     "id": "376",
-    "name": "jagruthi Jitesh Patel",
+    "name": "Jagruthi Jitesh Patel",
     "role": "Member",
     "photo": "ids/IMG-20260106-WA0026.jpg",
     "phone": "9585545275",
@@ -4778,14 +4778,14 @@
     "phone": "7598249360",
     "email": "",
     "address": "Vandana.S.Vora\n307 Ramani cosy Tower\nB- Block ,3rd Floor,\nWest Venketsamy Road,\nR.s.Puram,\nCoimbatore-641002\n",
-    "bloodGroup": " O+",
+    "bloodGroup": "O+",
     "groupNumber": 33,
     "groupName": "Cooking Group 33",
     "groupRole": "member"
   },
   {
     "id": "378",
-    "name": "TULIKA NILESH SHAH",
+    "name": "Tulika Nilesh Shah",
     "role": "Member",
     "photo": "ids/IMG-20260106-WA0005.jpg",
     "phone": "9894019660",
@@ -4798,7 +4798,7 @@
   },
   {
     "id": "379",
-    "name": "pooja k sheth",
+    "name": "Pooja K Sheth",
     "role": "Member",
     "photo": "ids/IMG-379-f2976eed.jpg",
     "phone": "7069527532",
@@ -4811,7 +4811,7 @@
   },
   {
     "id": "380",
-    "name": "Narmadha.m.patel",
+    "name": "Narmadha.M.Patel",
     "role": "Member",
     "photo": "ids/IMG-20260106-WA0008.jpg",
     "phone": "9585545272",
@@ -4837,13 +4837,13 @@
   },
   {
     "id": "382",
-    "name": "Jalpa Deepesh shah",
+    "name": "Jalpa Deepesh Shah",
     "role": "Member",
     "photo": "ids/IMG-382-cbd41629.jpg",
     "phone": "9445903758",
     "email": "91jalpa@gmail.com",
     "address": "*Name:* Jalpa Deepesh shah \n*Address:* 4A7 phase 2 sukra majesticka grande apartment Vasantham Nagar venkittapuram \nCoimbatore: 641025\n",
-    "bloodGroup": "B+ve",
+    "bloodGroup": "B+",
     "groupNumber": 33,
     "groupName": "Cooking Group 33",
     "groupRole": "member"
@@ -4941,7 +4941,7 @@
   },
   {
     "id": "391",
-    "name": "JALPA DESAI",
+    "name": "Jalpa Desai",
     "role": "Member",
     "photo": "ids/IMG-20260106-WA0019.jpg",
     "phone": "8610840601",
@@ -4954,7 +4954,7 @@
   },
   {
     "id": "392",
-    "name": "Hansa ben Babubhai",
+    "name": "Hansa Ben Babubhai",
     "role": "Member",
     "photo": "ids/IMG-20260106-WA0020.jpg",
     "phone": "9344504911",
@@ -4980,7 +4980,7 @@
   },
   {
     "id": "394",
-    "name": "Rekha kishore patel",
+    "name": "Rekha Kishore Patel",
     "role": "Member",
     "photo": "ids/IMG-394-90dbde79.jpg",
     "phone": "9585545273",
@@ -5032,7 +5032,7 @@
   },
   {
     "id": "398",
-    "name": "Mona Uday kikani",
+    "name": "Mona Uday Kikani",
     "role": "Member",
     "photo": "ids/IMG-398-c604c8ff.jpg",
     "phone": "9655839885",
@@ -5253,7 +5253,7 @@
   },
   {
     "id": "417",
-    "name": "laxmi .n.patel",
+    "name": "Laxmi .N.Patel",
     "role": "Member",
     "photo": "ids/IMG-20260107-WA0020.jpg",
     "phone": "8148790100",
@@ -5266,7 +5266,7 @@
   },
   {
     "id": "418",
-    "name": "NIRMALA V. THACKER",
+    "name": "Nirmala V. Thacker",
     "role": "Member",
     "photo": "ids/IMG-20260107-WA0021.jpg",
     "phone": "9382216289",
@@ -5279,7 +5279,7 @@
   },
   {
     "id": "419",
-    "name": "Kasthuri k Patel",
+    "name": "Kasthuri K Patel",
     "role": "Member",
     "photo": "ids/IMG-20260107-WA0024.jpg",
     "phone": "9843551119",
@@ -5292,7 +5292,7 @@
   },
   {
     "id": "420",
-    "name": "Urmila pujara",
+    "name": "Urmila Pujara",
     "role": "Member",
     "photo": "ids/IMG-420-2e67bcfa.jpg",
     "phone": "9843069448",
@@ -5318,13 +5318,13 @@
   },
   {
     "id": "422",
-    "name": "Ila Lalit kikani",
+    "name": "Ila Lalit Kikani",
     "role": "Member",
     "photo": "ids/IMG-422-a84728da.jpg",
     "phone": "9047052221",
     "email": "",
     "address": "Ila Lalit kikani. \n Lalit   Kikani \n14,Jawarnagar\nCoimbatore. \n\n",
-    "bloodGroup": "A+\n",
+    "bloodGroup": "A+",
     "groupNumber": 24,
     "groupName": "Cooking Group 24",
     "groupRole": "member"
@@ -5461,7 +5461,7 @@
   },
   {
     "id": "433",
-    "name": "Rekha Ben Jayaprakesh Joshi 8A, Ramalinga nagar, 4th cross, k.k. Pudur, sai baba colony, Coimbatore-641038",
+    "name": "Rekha Ben Jayaprakesh Joshi 8a, Ramalinga Nagar, 4th Cross, K.K. Pudur, Sai Baba Colony, Coimbatore-641038",
     "role": "Member",
     "photo": "ids/IMG-433-003e514f.jpg",
     "phone": "9904248398",
@@ -5500,7 +5500,7 @@
   },
   {
     "id": "436",
-    "name": "HEMANGINI HEMANTKUMAR",
+    "name": "Hemangini Hemantkumar",
     "role": "Member",
     "photo": "ids/IMG-436-24917b92.jpg",
     "phone": "94884 41434",
@@ -5526,13 +5526,13 @@
   },
   {
     "id": "438",
-    "name": "Hansaben Parmar ",
+    "name": "Hansaben Parmar",
     "role": "Member",
     "photo": "ids/IMG-20260109-WA0002.jpg",
     "phone": "9626294200",
     "email": "",
     "address": "Hansha Parmar 321. Koundapan street.4th street kk pudur sb colony cbe. 641038\n ",
-    "bloodGroup": ".o+",
+    "bloodGroup": "O+",
     "groupNumber": 0,
     "groupName": "Unassigned",
     "groupRole": ""
@@ -5565,7 +5565,7 @@
   },
   {
     "id": "441",
-    "name": "Ruchi parmar",
+    "name": "Ruchi Parmar",
     "role": "Member",
     "photo": "ids/IMG-441-e282484c.jpg",
     "phone": "9751399191",
@@ -5578,7 +5578,7 @@
   },
   {
     "id": "442",
-    "name": "bhavana B Patel",
+    "name": "Bhavana B Patel",
     "role": "Member",
     "photo": "ids/IMG-20260108-WA0009.jpg",
     "phone": "7200736963",
@@ -5604,7 +5604,7 @@
   },
   {
     "id": "444",
-    "name": "devki Karamshi Patel",
+    "name": "Devki Karamshi Patel",
     "role": "Member",
     "photo": "ids/IMG-444-63db473b.jpg",
     "phone": "9487471846",
@@ -5617,7 +5617,7 @@
   },
   {
     "id": "445",
-    "name": "Heena Koushik patel",
+    "name": "Heena Koushik Patel",
     "role": "Member",
     "photo": "ids/IMG-20260108-WA0012.jpg",
     "phone": "9363122062",
@@ -5630,13 +5630,13 @@
   },
   {
     "id": "446",
-    "name": "Geetha paleja",
+    "name": "Geetha Paleja",
     "role": "Member",
     "photo": "ids/IMG-20260109-WA0004.jpg",
     "phone": "9543381835",
     "email": "",
     "address": "\nGeetha paleja\n41C,Ponnusamy Road.\nNear Gujrathi Samaj.\nR.S.Puram\nCoimbatore.\n",
-    "bloodGroup": " O+.\n",
+    "bloodGroup": "O+",
     "groupNumber": 0,
     "groupName": "Unassigned",
     "groupRole": ""
@@ -5656,7 +5656,7 @@
   },
   {
     "id": "448",
-    "name": " Rashmi M Joshi",
+    "name": "Rashmi M Joshi",
     "role": "Member",
     "photo": "ids/IMG-20260108-WA0000.jpg",
     "phone": "7736667915",
@@ -5669,7 +5669,7 @@
   },
   {
     "id": "449",
-    "name": " Yashoda Bhavani Shankar Joshi",
+    "name": "Yashoda Bhavani Shankar Joshi",
     "role": "Member",
     "photo": "ids/IMG-20260108-WA0001.jpg",
     "phone": "9566082472",
@@ -5682,7 +5682,7 @@
   },
   {
     "id": "450",
-    "name": "Narmada Jayanthilal patel",
+    "name": "Narmada Jayanthilal Patel",
     "role": "Member",
     "photo": "ids/IMG-20260108-WA0007.jpg",
     "phone": "9629312514",
@@ -5721,7 +5721,7 @@
   },
   {
     "id": "453",
-    "name": "Dhara virat popat",
+    "name": "Dhara Virat Popat",
     "role": "Member",
     "photo": "ids/IMG-453-ffcd8de7.jpg",
     "phone": "9677629529",
@@ -5740,14 +5740,14 @@
     "phone": "9843354780",
     "email": "revathi.raichura@yahoo.co.in",
     "address": "Revathi Rajesh \n38 ,Ohm Shakti krupa,Venkatramana road,R.S.Puram, Coimbatore .\n",
-    "bloodGroup": "\nBPostive ",
+    "bloodGroup": "B+",
     "groupNumber": 32,
     "groupName": "Cooking Group 32",
     "groupRole": "member"
   },
   {
     "id": "455",
-    "name": "Bhavana Rohit shah",
+    "name": "Bhavana Rohit Shah",
     "role": "Member",
     "photo": "ids/IMG-20260109-WA0008.jpg",
     "phone": "9843252840",
@@ -5786,7 +5786,7 @@
   },
   {
     "id": "458",
-    "name": "PRITI TUSHAR SHAH",
+    "name": "Priti Tushar Shah",
     "role": "Member",
     "photo": "ids/IMG-20260109-WA0022.jpg",
     "phone": "9629777025",
@@ -5838,7 +5838,7 @@
   },
   {
     "id": "462",
-    "name": "Dharini umesh sharma",
+    "name": "Dharini Umesh Sharma",
     "role": "Member",
     "photo": "ids/IMG-20260109-WA0031.jpg",
     "phone": "",
@@ -5903,7 +5903,7 @@
   },
   {
     "id": "467",
-    "name": "Anjana dobariya",
+    "name": "Anjana Dobariya",
     "role": "Member",
     "photo": "ids/IMG-20260110-WA0004.jpg",
     "phone": "9345363851",
@@ -6020,7 +6020,7 @@
   },
   {
     "id": "476",
-    "name": "Nehal shah",
+    "name": "Nehal Shah",
     "role": "Member",
     "photo": "ids/IMG-20260110-WA0016.jpg",
     "phone": "9487562098",
@@ -6033,7 +6033,7 @@
   },
   {
     "id": "477",
-    "name": "Dharti Meet patel",
+    "name": "Dharti Meet Patel",
     "role": "Member",
     "photo": "ids/IMG-477-523d3b21.jpg",
     "phone": "8799132895",
@@ -6046,7 +6046,7 @@
   },
   {
     "id": "478",
-    "name": "Hiral bhavik Vora",
+    "name": "Hiral Bhavik Vora",
     "role": "Member",
     "photo": "ids/IMG-20260110-WA0020.jpg",
     "phone": "8807445520",
@@ -6059,7 +6059,7 @@
   },
   {
     "id": "479",
-    "name": "Nisha A shah",
+    "name": "Nisha A Shah",
     "role": "Member",
     "photo": "ids/IMG-20260110-WA0021.jpg",
     "phone": "8807310480",
@@ -6072,7 +6072,7 @@
   },
   {
     "id": "480",
-    "name": "Devanshi chirag doshi",
+    "name": "Devanshi Chirag Doshi",
     "role": "Member",
     "photo": "ids/IMG-20260110-WA0022.jpg",
     "phone": "8870755455",
@@ -6111,7 +6111,7 @@
   },
   {
     "id": "483",
-    "name": "Aneri pratik dagha",
+    "name": "Aneri Pratik Dagha",
     "role": "Member",
     "photo": "ids/IMG-20260110-WA0038.jpg",
     "phone": "9751000034",
@@ -6156,14 +6156,14 @@
     "phone": "9487494036",
     "email": "",
     "address": "G.S.Swathe (parul)\nNo.27,11th cross New thillainagar,\nP.N.Pudur post \nCoimbatore 641041\n",
-    "bloodGroup": "\nA+ve ",
+    "bloodGroup": "A+",
     "groupNumber": 0,
     "groupName": "Unassigned",
     "groupRole": ""
   },
   {
     "id": "487",
-    "name": "Komal daga",
+    "name": "Komal Daga",
     "role": "Member",
     "photo": "ids/IMG-487-f97612bc.jpg",
     "phone": "9843816453",
@@ -6176,7 +6176,7 @@
   },
   {
     "id": "488",
-    "name": "Geeta dilip Zaveri  ",
+    "name": "Geeta Dilip Zaveri",
     "role": "Member",
     "photo": "ids/IMG-488-d2ef8f07.jpg",
     "phone": " 9843173777",
@@ -6189,46 +6189,46 @@
   },
   {
     "id": "489",
-    "name": "Deepali N. Shah\n",
+    "name": "Deepali N. Shah",
     "role": "Member",
     "photo": "ids/IMG-489-0ce5abb0.jpg",
     "phone": " 9751499933\n\n",
     "email": "",
     "address": "Deepali N. Shah\n\n\nAddress: 25k chinnmal street kk pudhur coimbatore- \n\n",
-    "bloodGroup": "A1+",
+    "bloodGroup": "A+",
     "groupNumber": 34,
     "groupName": "Cooking Group 34",
     "groupRole": "captain"
   },
   {
     "id": "490",
-    "name": " Deepa Prabhu\n\n",
+    "name": "Deepa Prabhu",
     "role": "Member",
     "photo": "ids/IMG-490-1e43df9a.jpg",
     "phone": "8870209910\n",
     "email": " saideepsamu@gmail.com",
     "address": "Name - Deepa Prabhu\n\nAddress - 2B Srivari Sushanth Apartment, Periasamy Road (west), RS Puram\nCbe 641002\n\n\n\n",
-    "bloodGroup": "\nBlood group -",
+    "bloodGroup": "",
     "groupNumber": 2,
     "groupName": "Cooking Group 2",
     "groupRole": "member"
   },
   {
     "id": "491",
-    "name": "Rani Shah \n",
+    "name": "Rani Shah",
     "role": "Member",
     "photo": "ids/IMG-491-cf401685.jpg",
     "phone": "9130250404",
     "email": "rani78261@gmail.com\n",
     "address": "Name-Rani Shah \nAddress-Diamond city \n",
-    "bloodGroup": "O-ve",
+    "bloodGroup": "O-",
     "groupNumber": 45,
     "groupName": "Cooking Group 45",
     "groupRole": "member"
   },
   {
     "id": "492",
-    "name": "Rakhi B Mehta \n",
+    "name": "Rakhi B Mehta",
     "role": "Member",
     "photo": "ids/IMG-492-d20053be.jpg",
     "phone": "9360693131\n",
@@ -6241,7 +6241,7 @@
   },
   {
     "id": "493",
-    "name": "Prachi jain\n",
+    "name": "Prachi Jain",
     "role": "Member",
     "photo": "ids/IMG-493-46b43059.jpg",
     "phone": "82209 55062\n",
@@ -6254,7 +6254,7 @@
   },
   {
     "id": "494",
-    "name": "Bhairavi.H.Vora\n",
+    "name": "Bhairavi.H.Vora",
     "role": "Member",
     "photo": "ids/IMG-494-6bb0de76.jpg",
     "phone": "7598259360\n",
@@ -6267,98 +6267,98 @@
   },
   {
     "id": "495",
-    "name": "Harsha Bharat Shah\n\n",
+    "name": "Harsha Bharat Shah",
     "role": "Member",
     "photo": "ids/IMG-495-c87c5708.jpg",
     "phone": " 9442648883\n\n",
     "email": " harshashah1@gmail.com\n\n",
     "address": "\nHarsha Bharat Shah\n\nADDRESS- \nThe Summit Apartments \nA Block, 7- E\n362, Mettupalayam Road \nCoimbatore - 641043\n\n",
-    "bloodGroup": " \nO Negative",
+    "bloodGroup": "O-",
     "groupNumber": 16,
     "groupName": "Cooking Group 16",
     "groupRole": "member"
   },
   {
     "id": "496",
-    "name": "Sheila Sukant Desai\n",
+    "name": "Sheila Sukant Desai",
     "role": "Member",
     "photo": "ids/IMG-496-86c21fc6.jpg",
     "phone": "9047280701\n",
     "email": " mme.sheila@gmail.com \n",
     "address": "Name - Sheila Sukant Desai\nAddress -M3, Patteeshwara Park Apartments \nDr. Ramasamy Layout. K K Pudur . Coimbatore - 641025 \n",
-    "bloodGroup": " A + ( A positive)",
+    "bloodGroup": "A+",
     "groupNumber": 44,
     "groupName": "Cooking Group 44",
     "groupRole": "member"
   },
   {
     "id": "497",
-    "name": "Naina Niketu shah \n",
+    "name": "Naina Niketu Shah",
     "role": "Member",
     "photo": "ids/IMG-497-74e26fdb.jpg",
     "phone": "9487568501 \n",
     "email": "nainaniku@gmail.com \n",
     "address": "Name - Naina Niketu shah \n113 west ponnurangam road \nR S Puram \nCoimbatore -641002 \n",
-    "bloodGroup": "Blood group- B+",
+    "bloodGroup": "B+",
     "groupNumber": 45,
     "groupName": "Cooking Group 45",
     "groupRole": "captain"
   },
   {
     "id": "498",
-    "name": "  HEENA POPAT \n",
+    "name": "Heena Popat",
     "role": "Member",
     "photo": "ids/IMG-498-03449f59.jpg",
     "phone": "9843010936\n",
     "email": "",
     "address": "Name.           HEENA POPAT \nADDRESS.    \" VEDANT\" 1,-B\n                      CHINTHAMANI Nagar 1 st cross. \nK.k. pudur - Saibaba colony \nCoimbatore - 641038\n",
-    "bloodGroup": " A1,+",
+    "bloodGroup": "A+",
     "groupNumber": 23,
     "groupName": "Cooking Group 23",
     "groupRole": "member"
   },
   {
     "id": "499",
-    "name": " PAYAL POPAT\n",
+    "name": "Payal Popat",
     "role": "Member",
     "photo": "ids/IMG-499-3b9047b8.jpg",
     "phone": "7010395146\n",
     "email": "",
     "address": "NAME.      PAYAL POPAT\nADD.         \" VEDANT\" 1/B,\n CHINTHAMANI NAGAR \n1ST CROSS,K.K.PUDUR\nSAIBABA COLONY \nCOIMBATORE -641038\n",
-    "bloodGroup": " B +",
+    "bloodGroup": "B+",
     "groupNumber": 23,
     "groupName": "Cooking Group 23",
     "groupRole": "captain"
   },
   {
     "id": "500",
-    "name": "Gita. C. Patel     ",
+    "name": "Gita. C. Patel",
     "role": "Member",
     "photo": "ids/IMG-500-27e0a4b1.jpg",
     "phone": "  9486186688.   ",
     "email": " gcpatelcbe@gmail.com.  ",
     "address": "Gita. C. Patel     104/A. Periyasamy road west. R S Puram. Coimbatore. 641002.  ",
-    "bloodGroup": " B -ve",
+    "bloodGroup": "B-",
     "groupNumber": 9,
     "groupName": "Cooking Group 9",
     "groupRole": "member"
   },
   {
     "id": "502",
-    "name": " BHAVIKA BABARIYA\n",
+    "name": "Bhavika Babariya",
     "role": "Member",
     "photo": "ids/IMG-502-27bc025d.jpg",
     "phone": "9638613677\n",
     "email": " BHAVIKABABARIYA23@GMAIL.COM\n",
     "address": "Name: BHAVIKA BABARIYA\nAddress: 3RD FLOOR RAJENDRA METAL BUILDING \n70.VCV ROAD.\nPOO MARKET \nR.S.PURAM \nCoimbatore 641002\n\n\n",
-    "bloodGroup": " B +ve",
+    "bloodGroup": "B+",
     "groupNumber": 27,
     "groupName": "Cooking Group 27",
     "groupRole": "member"
   },
   {
     "id": "503",
-    "name": "Meghna nirav shah",
+    "name": "Meghna Nirav Shah",
     "role": "Member",
     "photo": "ids/IMG-503-2074ae90.jpg",
     "phone": "Ph-9944040672",
@@ -6384,7 +6384,7 @@
   },
   {
     "id": "505",
-    "name": " Richa Tanna\n\n",
+    "name": "Richa Tanna",
     "role": "Member",
     "photo": "ids/IMG-505-a571fec6.jpg",
     "phone": "9894077536",
@@ -6397,7 +6397,7 @@
   },
   {
     "id": "515",
-    "name": "Neepa sanghvi \n",
+    "name": "Neepa Sanghvi",
     "role": "Member",
     "photo": "ids/default.jpg",
     "phone": "9429878710",
@@ -6410,7 +6410,7 @@
   },
   {
     "id": "516",
-    "name": "Jayshree D Budhdev\n\n",
+    "name": "Jayshree D Budhdev",
     "role": "Member",
     "photo": "ids/default.jpg",
     "phone": "9581691657\n",
@@ -6436,7 +6436,7 @@
   },
   {
     "id": "517",
-    "name": "Ami Vyas  ",
+    "name": "Ami Vyas",
     "role": "Member",
     "photo": "ids/default.jpg",
     "phone": "98210 28927 \n",
@@ -6462,7 +6462,7 @@
   },
   {
     "id": "507",
-    "name": "Yutal Manish Momaya \n",
+    "name": "Yutal Manish Momaya",
     "role": "Member",
     "photo": "ids/default.jpg",
     "phone": " 9361145999\n",
@@ -6475,13 +6475,13 @@
   },
   {
     "id": "519",
-    "name": "Mona k .Vyas.",
+    "name": "Mona K .Vyas.",
     "role": "Member",
     "photo": "ids/IMG-507-09cee3af.jpg",
     "phone": "Mob..9489603470",
     "email": "Monakvyas1672@gmail.com",
     "address": "Adress. G.1.- 402 , Provident green park  ,perur  Main road  , selvapuram South Muthuswamy colony  ,Coimbatore.  641026 ,",
-    "bloodGroup": "Blood group. O+ve.",
+    "bloodGroup": "O+",
     "groupNumber": 34,
     "groupName": "Cooking Group 34",
     "groupRole": "captain"
@@ -6501,26 +6501,26 @@
   },
   {
     "id": "509",
-    "name": "Nita manoharan patel",
+    "name": "Nita Manoharan Patel",
     "role": "Member",
     "photo": "ids/IMG-509-14cfeb5d.jpg",
     "phone": "9003345035",
     "email": "",
     "address": " Nita manoharan patel \n*Address* : 122 main road, podanur ,Coimbatore -641023 \n\n",
-    "bloodGroup": "O×",
+    "bloodGroup": "",
     "groupNumber": 14,
     "groupName": "Cooking Group 14",
     "groupRole": "member"
   },
   {
     "id": "510",
-    "name": "Nayna y.mehta,",
+    "name": "Nayna Y.Mehta,",
     "role": "Member",
     "photo": "ids/IMG-510-35061d02.jpg",
     "phone": "Cell-9843645660",
     "email": "",
     "address": "  KTVR Towers, flat no-E4, 4th floor. Thadagam road, opp- GCT college quarters, coimbatore-641013.                         ",
-    "bloodGroup": "O+ve.",
+    "bloodGroup": "O+",
     "groupNumber": 24,
     "groupName": "Cooking Group 24",
     "groupRole": "member"
@@ -6540,13 +6540,13 @@
   },
   {
     "id": "512",
-    "name": "Neeta .S. Asher. ",
+    "name": "Neeta .S. Asher.",
     "role": "Member",
     "photo": "ids/IMG-512-5126f303.jpg",
     "phone": "94430 29062",
     "email": "",
     "address": "Neeta .S. Asher. \n72/18 4-C May flower  Meadows Apts. \nWest Venkatsamy Road. \nR.S.Puram. Coimbatore  641002.\n\n",
-    "bloodGroup": "  O positive",
+    "bloodGroup": "O+",
     "groupNumber": 5,
     "groupName": "Cooking Group 5",
     "groupRole": "captain"
@@ -6566,7 +6566,7 @@
   },
   {
     "id": "514",
-    "name": "Pallavi k Shah \n",
+    "name": "Pallavi K Shah",
     "role": "Member",
     "photo": "ids/IMG-514-48700828.jpg",
     "phone": "9363246155\n\n\n\n",

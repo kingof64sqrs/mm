@@ -12,6 +12,7 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { CameraView, Camera } from 'expo-camera';
 import { Ionicons } from '@expo/vector-icons';
 import membersData from '../data/updated_members.json';
+import { scaleFont, moderateScale, spacing, wp, hp } from '../utils/responsive';
 
 type RootStackParamList = {
   Directory: undefined;
@@ -169,22 +170,22 @@ const styles = StyleSheet.create({
   },
   header: {
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
-    padding: 20,
-    paddingTop: 50,
+    padding: spacing.lg,
+    paddingTop: spacing.xxl * 2,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
   },
   backButton: {
-    padding: 5,
+    padding: spacing.xs,
   },
   logo: {
-    width: 40,
-    height: 40,
-    borderRadius: 20,
+    width: moderateScale(40),
+    height: moderateScale(40),
+    borderRadius: moderateScale(20),
   },
   headerTitle: {
-    fontSize: 20,
+    fontSize: scaleFont(20),
     fontWeight: 'bold',
     flex: 1,
     textAlign: 'center',
@@ -194,18 +195,18 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 20,
+    padding: spacing.lg,
   },
   messageText: {
-    fontSize: 18,
+    fontSize: scaleFont(18),
     color: '#fff',
-    marginTop: 20,
+    marginTop: spacing.lg,
     textAlign: 'center',
   },
   subText: {
-    fontSize: 14,
+    fontSize: scaleFont(14),
     color: '#ccc',
-    marginTop: 10,
+    marginTop: spacing.sm,
     textAlign: 'center',
   },
   cameraContainer: {
@@ -225,14 +226,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   scanArea: {
-    width: 250,
-    height: 250,
+    width: wp(65),
+    height: wp(65),
     position: 'relative',
   },
   corner: {
     position: 'absolute',
-    width: 40,
-    height: 40,
+    width: moderateScale(40),
+    height: moderateScale(40),
     borderColor: '#6B46C1',
     borderWidth: 4,
   },
@@ -262,28 +263,28 @@ const styles = StyleSheet.create({
   },
   instructions: {
     backgroundColor: 'rgba(0, 0, 0, 0.7)',
-    padding: 20,
+    padding: spacing.lg,
     alignItems: 'center',
   },
   instructionText: {
     color: '#fff',
-    fontSize: 16,
+    fontSize: scaleFont(16),
     textAlign: 'center',
   },
   scanAgainButton: {
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: '#6B46C1',
-    paddingVertical: 12,
-    paddingHorizontal: 20,
-    borderRadius: 8,
-    marginTop: 15,
+    paddingVertical: spacing.md,
+    paddingHorizontal: spacing.lg,
+    borderRadius: moderateScale(8),
+    marginTop: spacing.md,
   },
   scanAgainText: {
     color: '#fff',
-    fontSize: 16,
+    fontSize: scaleFont(16),
     fontWeight: '600',
-    marginLeft: 8,
+    marginLeft: spacing.sm,
   },
 });
 

@@ -20,21 +20,38 @@ const SplashScreen: React.FC<Props> = ({ onFinish }) => {
   const scaleAnim = useRef(new Animated.Value(0.3)).current;
   const textFadeAnim = useRef(new Animated.Value(0)).current;
   const slideAnim = useRef(new Animated.Value(50)).current;
+  const pulseAnim = useRef(new Animated.Value(1)).current;
 
   useEffect(() => {
+    // Continuous pulse for the outer logo glow
+    Animated.loop(
+      Animated.sequence([
+        Animated.timing(pulseAnim, {
+          toValue: 1.1,
+          duration: 1000,
+          useNativeDriver: true,
+        }),
+        Animated.timing(pulseAnim, {
+          toValue: 1,
+          duration: 1000,
+          useNativeDriver: true,
+        }),
+      ])
+    ).start();
+
     // Logo animation sequence
     Animated.sequence([
       // Logo fade in and scale up
       Animated.parallel([
         Animated.timing(fadeAnim, {
           toValue: 1,
-          duration: 500,
+          duration: 800,
           useNativeDriver: true,
         }),
         Animated.spring(scaleAnim, {
           toValue: 1,
           friction: 4,
-          tension: 40,
+          tension: 30,
           useNativeDriver: true,
         }),
       ]),
@@ -42,20 +59,21 @@ const SplashScreen: React.FC<Props> = ({ onFinish }) => {
       Animated.parallel([
         Animated.timing(textFadeAnim, {
           toValue: 1,
-          duration: 400,
+          duration: 600,
           useNativeDriver: true,
         }),
-        Animated.timing(slideAnim, {
+        Animated.spring(slideAnim, {
           toValue: 0,
-          duration: 400,
+          friction: 6,
+          tension: 40,
           useNativeDriver: true,
         }),
       ]),
     ]).start(() => {
-      // Navigate to main app quickly
+      // Navigate to main app after a short delay
       setTimeout(() => {
         onFinish();
-      }, 300);
+      }, 2000);
     });
   }, []);
 
@@ -76,6 +94,12 @@ const SplashScreen: React.FC<Props> = ({ onFinish }) => {
             },
           ]}
         >
+          <Animated.View
+            style={[
+              styles.logoGlow,
+              { transform: [{ scale: pulseAnim }] }
+            ]}
+          />
           <View style={styles.logoCircle}>
             <Image
               source={require('../assets/logo.png')}
@@ -100,6 +124,19 @@ const SplashScreen: React.FC<Props> = ({ onFinish }) => {
         </Animated.View>
       </View>
 
+      {/* Credits section at bottom */}
+      <Animated.View
+        style={[
+          styles.creditsContainer,
+          {
+            opacity: textFadeAnim,
+            transform: [{ translateY: slideAnim }],
+          }
+        ]}
+      >
+        <Text style={styles.creditsText}>In Loving Memory of Late Malthi K Raichura</Text>
+      </Animated.View>
+
       {/* Decorative circles */}
       <View style={styles.circle1} />
       <View style={styles.circle2} />
@@ -120,6 +157,15 @@ const styles = StyleSheet.create({
   },
   logoContainer: {
     marginBottom: 40,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  logoGlow: {
+    position: 'absolute',
+    width: 220,
+    height: 220,
+    borderRadius: 110,
+    backgroundColor: 'rgba(255, 255, 255, 0.2)',
   },
   logoCircle: {
     width: 200,
@@ -133,6 +179,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.3,
     shadowRadius: 20,
     elevation: 10,
+    zIndex: 2,
   },
   logo: {
     width: 160,
@@ -165,6 +212,20 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFB800',
     borderRadius: 2,
     marginTop: 20,
+  },
+  creditsContainer: {
+    position: 'absolute',
+    bottom: 50,
+    alignItems: 'center',
+    width: '100%',
+    zIndex: 10,
+  },
+  creditsText: {
+    color: '#E9D5FF',
+    fontSize: 14,
+    fontWeight: '500',
+    letterSpacing: 1,
+    opacity: 0.8,
   },
   circle1: {
     position: 'absolute',
