@@ -2,11 +2,11 @@ import json
 import re
 
 # Read the raw group data
-with open('/home/developer/Documents/mm/data/raw.txt', 'r', encoding='utf-8') as f:
+with open('/home/developer/J2W/mm/data/raw.txt', 'r', encoding='utf-8') as f:
     content = f.read()
 
 # Read the existing members data
-with open('/home/developer/Documents/mm/data/members.json', 'r', encoding='utf-8') as f:
+with open('/home/developer/J2W/mm/data/updated_members.json', 'r', encoding='utf-8') as f:
     members = json.load(f)
 
 # Split by "Group No - " to get each group section

@@ -13,7 +13,7 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { Ionicons } from '@expo/vector-icons';
-import membersData from '../data/members.json';
+import membersData from '../data/updated_members.json';
 import cookingGroupsData from '../data/cookingGroups.json';
 import { getImage } from '../utils/imageHelper';
 
