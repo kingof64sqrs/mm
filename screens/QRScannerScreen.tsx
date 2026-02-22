@@ -13,12 +13,7 @@ import { CameraView, Camera } from 'expo-camera';
 import { Ionicons } from '@expo/vector-icons';
 import membersData from '../data/updated_members.json';
 import { scaleFont, moderateScale, spacing, wp, hp } from '../utils/responsive';
-
-type RootStackParamList = {
-  Directory: undefined;
-  MemberDetail: { member: any };
-  QRScanner: undefined;
-};
+import { RootStackParamList } from '../App';
 
 type QRScannerScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,

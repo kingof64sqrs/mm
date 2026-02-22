@@ -19,14 +19,8 @@ import * as FileSystem from 'expo-file-system';
 import ViewShot from 'react-native-view-shot';
 import QRCode from 'react-native-qrcode-svg';
 import { getImage } from '../utils/imageHelper';
-import { Member } from './DirectoryScreen';
 import { scaleFont, moderateScale, spacing, wp, hp } from '../utils/responsive';
-
-type RootStackParamList = {
-  Directory: undefined;
-  MemberDetail: { member: Member };
-  QRScanner: undefined;
-};
+import { RootStackParamList, Member } from '../App';
 
 type MemberDetailScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
@@ -154,7 +148,7 @@ const MemberDetailScreen: React.FC<Props> = ({ navigation, route }) => {
 
       <ScrollView style={styles.content} showsVerticalScrollIndicator={false}>
         <View style={styles.profileSection}>
-          <Image source={getImage(member.photo || 'ids/default.jpg')} style={styles.profilePhoto} />
+          <Image source={getImage(member.photo || 'ids/default.jpg')} style={styles.profilePhoto} resizeMode="cover" />
           <Text style={styles.memberName}>{member.name}</Text>
           <Text style={styles.memberRole}>{member.role}</Text>
           {isPlaceholder && (

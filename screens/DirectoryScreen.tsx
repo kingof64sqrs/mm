@@ -16,18 +16,14 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { Ionicons } from '@expo/vector-icons';
+import { RootStackParamList, Member as BaseMember } from '../App';
 
 import membersData from '../data/updated_members.json';
 import cookingGroupsData from '../data/cookingGroups.json';
 import { getImage } from '../utils/imageHelper';
 import { scaleFont, moderateScale, spacing, wp, hp } from '../utils/responsive';
 import Sidebar from '../components/Sidebar';
-
-type RootStackParamList = {
-  Directory: { viewMode?: 'members' | 'groups' } | undefined;
-  MemberDetail: { member: Member };
-  QRScanner: undefined;
-};
+import CommonHeader from '../components/CommonHeader';
 
 type DirectoryScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
@@ -44,17 +40,10 @@ type Props = {
   route: DirectoryScreenRouteProp;
 };
 
-export type Member = {
-  id: string;
-  name: string;
-  role: string;
-  photo: string;
-  phone: string;
-  email: string;
-  address: string;
-  bloodGroup: string;
+export type Member = BaseMember & {
   groupNumber?: number;
   groupName?: string;
+  groupRole?: string;
 };
 
 type Group = {
@@ -282,61 +271,39 @@ const DirectoryScreen: React.FC<Props> = ({ navigation, route }) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.header}>
-        <View style={styles.headerLeft}>
-          <TouchableOpacity
-            style={styles.hamburgerButton}
-            onPress={toggleSidebar}
-            activeOpacity={0.7}
-          >
-            <Ionicons name="menu" size={24} color="#6B46C1" />
-          </TouchableOpacity>
-
-          <Image
-            source={require('../assets/logo.png')}
-            style={styles.logoImage}
-            resizeMode="contain"
-          />
-
-          <View>
-            <Text style={styles.headerTitle}>
-              {viewMode === 'members' ? 'Members' : 'Groups'}
-            </Text>
-            <View style={styles.memberCount}>
-              <Ionicons name={viewMode === 'members' ? "people" : "grid"} size={14} color="#6B46C1" />
-              <Text style={[styles.subtitle, { marginLeft: 4 }]}>
-                {viewMode === 'members' ? `${filteredMembers.length} Members` : `${groups.length} Groups`}
-              </Text>
-            </View>
-          </View>
-        </View>
-
-        <View style={styles.headerButtons}>
-          {viewMode === 'members' && (
+      <CommonHeader
+        onMenuPress={toggleSidebar}
+        title={viewMode === 'members' ? 'Members' : 'Groups'}
+        subtitle={viewMode === 'members' ? `${filteredMembers.length} Members` : `${groups.length} Groups`}
+        subtitleIcon={viewMode === 'members' ? "people" : "grid"}
+        rightButtons={
+          <>
+            {viewMode === 'members' && (
+              <TouchableOpacity
+                style={[styles.iconButton, { marginRight: spacing.sm }]}
+                onPress={() => setIsFilterModalVisible(true)}
+                activeOpacity={0.7}
+              >
+                <Ionicons
+                  name="filter"
+                  size={22}
+                  color={(sortOrder !== 'asc' || selectedBloodGroup) ? '#FFF' : '#6B46C1'}
+                />
+                {(sortOrder !== 'asc' || selectedBloodGroup) && (
+                  <View style={styles.filterActiveDot} />
+                )}
+              </TouchableOpacity>
+            )}
             <TouchableOpacity
-              style={[styles.iconButton, { marginRight: spacing.sm }]}
-              onPress={() => setIsFilterModalVisible(true)}
+              style={styles.iconButton}
+              onPress={() => navigation.navigate('QRScanner')}
               activeOpacity={0.7}
             >
-              <Ionicons
-                name="filter"
-                size={22}
-                color={(sortOrder !== 'asc' || selectedBloodGroup) ? '#FFF' : '#6B46C1'}
-              />
-              {(sortOrder !== 'asc' || selectedBloodGroup) && (
-                <View style={styles.filterActiveDot} />
-              )}
+              <Ionicons name="qr-code" size={22} color="#6B46C1" />
             </TouchableOpacity>
-          )}
-          <TouchableOpacity
-            style={styles.iconButton}
-            onPress={() => navigation.navigate('QRScanner')}
-            activeOpacity={0.7}
-          >
-            <Ionicons name="qr-code" size={22} color="#6B46C1" />
-          </TouchableOpacity>
-        </View>
-      </View>
+          </>
+        }
+      />
 
       <View style={styles.searchContainer}>
         <View style={styles.searchBox}>
@@ -542,57 +509,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#F4F6F9',
-  },
-  header: {
-    backgroundColor: '#FFF',
-    paddingHorizontal: spacing.xl,
-    paddingTop: spacing.xl,
-    paddingBottom: spacing.lg,
-    borderBottomWidth: 1,
-    borderBottomColor: '#F3F4F6',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.05,
-    shadowRadius: 10,
-    elevation: 8,
-    zIndex: 5,
-  },
-  headerLeft: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  hamburgerButton: {
-    padding: spacing.xs,
-    marginRight: spacing.sm,
-    backgroundColor: '#F0EBFF',
-    borderRadius: moderateScale(8),
-  },
-  logoImage: {
-    width: moderateScale(50),
-    height: moderateScale(50),
-    marginRight: spacing.md,
-  },
-  headerTitle: {
-    fontSize: scaleFont(22),
-    fontWeight: '800',
-    color: '#1A1A1A',
-    letterSpacing: 0.5,
-  },
-  memberCount: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginTop: 2,
-  },
-  subtitle: {
-    fontSize: scaleFont(13),
-    color: '#666',
-    fontWeight: '600',
-  },
-  headerButtons: {
-    flexDirection: 'row',
   },
   iconButton: {
     backgroundColor: '#F0EBFF',
@@ -1015,7 +931,7 @@ const MemberCard = React.memo(({ item, navigation }: { item: Member, navigation:
         activeOpacity={1}
       >
         <View style={styles.photoContainer}>
-          <Image source={getImage(item.photo)} style={styles.memberPhoto} />
+          <Image source={getImage(item.photo)} style={styles.memberPhoto} resizeMode="cover" />
           <View style={styles.onlineIndicator} />
           {isPresident && (
             <View style={styles.starBadge}>

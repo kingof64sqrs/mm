@@ -7,6 +7,7 @@ import MemberDetailScreen from './screens/MemberDetailScreen';
 import QRScannerScreen from './screens/QRScannerScreen';
 import SplashScreen from './screens/SplashScreen';
 import CommitteeScreen from './screens/CommitteeScreen';
+import EmergencyContactsScreen from './screens/EmergencyContactsScreen';
 
 export type Member = {
   id: string;
@@ -24,6 +25,7 @@ export type RootStackParamList = {
   MemberDetail: { member: Member };
   QRScanner: undefined;
   Committee: undefined;
+  Emergency: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -48,6 +50,7 @@ export default function App() {
         <Stack.Screen name="MemberDetail" component={MemberDetailScreen} />
         <Stack.Screen name="QRScanner" component={QRScannerScreen} />
         <Stack.Screen name="Committee" component={CommitteeScreen} />
+        <Stack.Screen name="Emergency" component={EmergencyContactsScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

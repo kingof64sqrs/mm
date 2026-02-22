@@ -22,7 +22,7 @@ type SidebarProps = {
   onClose: () => void;
   sidebarAnim: Animated.Value;
   overlayAnim: Animated.Value;
-  currentScreen: 'Directory' | 'Committee';
+  currentScreen: 'Directory' | 'Committee' | 'Emergency';
   navigation: any;
   viewMode?: 'members' | 'groups';
   onViewModeChange?: (mode: 'members' | 'groups') => void;
@@ -53,6 +53,13 @@ const Sidebar: React.FC<SidebarProps> = ({
     onClose();
     setTimeout(() => {
       navigation.navigate('Committee');
+    }, 300);
+  };
+
+  const handleNavigateToEmergency = () => {
+    onClose();
+    setTimeout(() => {
+      navigation.navigate('Emergency');
     }, 300);
   };
 
@@ -97,6 +104,7 @@ const Sidebar: React.FC<SidebarProps> = ({
           </View>
           <Text style={styles.sidebarTitle}>Menu</Text>
           <Text style={styles.sidebarSubtitle}>Mahila Mandal Directory</Text>
+          <Text style={styles.memorialText}>In Loving Memory of Malthi Kishore Raichura</Text>
         </LinearGradient>
 
         <View style={styles.sidebarContent}>
@@ -185,6 +193,32 @@ const Sidebar: React.FC<SidebarProps> = ({
               Committee Info
             </Text>
           </TouchableOpacity>
+
+          <TouchableOpacity
+            style={[styles.menuItem, currentScreen === 'Emergency' && styles.menuItemActive]}
+            onPress={handleNavigateToEmergency}
+          >
+            <View
+              style={[
+                styles.menuIconContainer,
+                currentScreen === 'Emergency' && styles.menuIconActive,
+              ]}
+            >
+              <Ionicons
+                name="medical"
+                size={22}
+                color={currentScreen === 'Emergency' ? '#FFF' : '#6B46C1'}
+              />
+            </View>
+            <Text
+              style={[
+                styles.menuItemText,
+                currentScreen === 'Emergency' && styles.menuItemTextActive,
+              ]}
+            >
+              Emergency Contacts
+            </Text>
+          </TouchableOpacity>
         </View>
 
         <View style={styles.sidebarFooter}>
@@ -251,6 +285,13 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     color: '#E9D5FF',
     marginTop: 4,
+  },
+  memorialText: {
+    fontSize: scaleFont(11),
+    fontWeight: '400',
+    color: '#FDE68A',
+    marginTop: spacing.xs,
+    fontStyle: 'italic',
   },
   sidebarContent: {
     flex: 1,

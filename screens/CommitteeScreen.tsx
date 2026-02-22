@@ -14,10 +14,11 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList, Member } from '../App';
-import membersData from '../data/members.json';
+import membersData from '../data/updated_members.json';
 import { scaleFont, moderateScale, spacing } from '../utils/responsive';
 import { getImage } from '../utils/imageHelper';
 import Sidebar from '../components/Sidebar';
+import CommonHeader from '../components/CommonHeader';
 
 type CommitteeScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'Committee'>;
 
@@ -70,7 +71,7 @@ export default function CommitteeScreen({ navigation }: Props) {
     const roleGroups = [
         { title: 'President', roleMatch: ['President'] },
         { title: 'Vice Presidents', roleMatch: ['Vice President'] },
-        { title: 'Secretaries', roleMatch: ['Secretary'] },
+        { title: 'Secretaries', roleMatch: ['Secretary', 'Joint Secretary'] },
         { title: 'Treasurers', roleMatch: ['Treasurer', 'Joint Treasurer'] },
         { title: 'Committee Members', roleMatch: ['Committee Member'] },
     ];
@@ -132,33 +133,12 @@ export default function CommitteeScreen({ navigation }: Props) {
 
     return (
         <SafeAreaView style={styles.container}>
-            <View style={styles.header}>
-                <View style={styles.headerLeft}>
-                    <TouchableOpacity
-                        style={styles.hamburgerButton}
-                        onPress={toggleSidebar}
-                        activeOpacity={0.7}
-                    >
-                        <Ionicons name="menu" size={24} color="#6B46C1" />
-                    </TouchableOpacity>
-
-                    <Image
-                        source={require('../assets/logo.png')}
-                        style={styles.logoImage}
-                        resizeMode="contain"
-                    />
-
-                    <View>
-                        <Text style={styles.headerTitle}>Committee</Text>
-                        <View style={styles.memberCount}>
-                            <Ionicons name="star" size={14} color="#6B46C1" />
-                            <Text style={styles.subtitle}>
-                                <Text style={{ color: '#BE123C' }}>Leadership</Text> Team
-                            </Text>
-                        </View>
-                    </View>
-                </View>
-            </View>
+            <CommonHeader
+                onMenuPress={toggleSidebar}
+                title="Committee"
+                subtitle="Leadership Team"
+                subtitleIcon="star"
+            />
 
             <FlatList
                 data={groupedMembers}
@@ -188,54 +168,6 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#F4F6F9',
-    },
-    header: {
-        backgroundColor: '#FFF',
-        paddingHorizontal: spacing.xl,
-        paddingTop: Platform.OS === 'ios' ? spacing.md : spacing.xl,
-        paddingBottom: spacing.lg,
-        borderBottomWidth: 1,
-        borderBottomColor: '#F3F4F6',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 4 },
-        shadowOpacity: 0.05,
-        shadowRadius: 10,
-        elevation: 8,
-        zIndex: 5,
-    },
-    headerLeft: {
-        flexDirection: 'row',
-        alignItems: 'center',
-    },
-    hamburgerButton: {
-        padding: spacing.xs,
-        marginRight: spacing.sm,
-        backgroundColor: '#F0EBFF',
-        borderRadius: moderateScale(8),
-    },
-    logoImage: {
-        width: moderateScale(50),
-        height: moderateScale(50),
-        marginRight: spacing.md,
-    },
-    headerTitle: {
-        fontSize: scaleFont(22),
-        fontWeight: '800',
-        color: '#1A1A1A',
-        marginBottom: 2,
-    },
-    memberCount: {
-        flexDirection: 'row',
-        alignItems: 'center',
-    },
-    subtitle: {
-        fontSize: scaleFont(13),
-        fontWeight: '600',
-        color: '#6B7280',
-        marginLeft: 4,
     },
     listContainer: {
         padding: spacing.lg,
