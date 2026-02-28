@@ -123,8 +123,16 @@ const Sidebar: React.FC<SidebarProps> = ({
         </LinearGradient>
 
         <View style={styles.sidebarContent}>
-          <TouchableOpacity
-            style={[
+          <TouchableOpacity            style={styles.menuItem}
+            onPress={handleNavigateToPresidentMessage}
+          >
+            <View style={styles.menuIconContainer}>
+              <Ionicons name="chatbubble-ellipses" size={22} color="#6B46C1" />
+            </View>
+            <Text style={styles.menuItemText}>President's Message</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity            style={[
               styles.menuItem,
               currentScreen === 'Directory' && viewMode === 'members' && styles.menuItemActive,
             ]}
@@ -237,16 +245,6 @@ const Sidebar: React.FC<SidebarProps> = ({
 
           <TouchableOpacity
             style={styles.menuItem}
-            onPress={handleNavigateToPresidentMessage}
-          >
-            <View style={styles.menuIconContainer}>
-              <Ionicons name="chatbubble-ellipses" size={22} color="#6B46C1" />
-            </View>
-            <Text style={styles.menuItemText}>President's Message</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            style={styles.menuItem}
             onPress={handleNavigateToProjects}
           >
             <View style={styles.menuIconContainer}>
@@ -260,12 +258,12 @@ const Sidebar: React.FC<SidebarProps> = ({
           <Text style={styles.devByText}>Designed & Developed by</Text>
           <Text style={styles.devNameText}>Krishna Paresh Raichura & Team</Text>
           <TouchableOpacity
-            onPress={() => Linking.openURL('https://kriio.in')}
+            onPress={() => Linking.openURL('https://kripio.in')}
             activeOpacity={0.7}
             style={styles.kriioButton}
           >
             <Ionicons name="globe-outline" size={13} color="#8B5CF6" />
-            <Text style={styles.kriioLinkText}>kriio.in</Text>
+            <Text style={styles.kriioLinkText}>kripio.in</Text>
             <Ionicons name="open-outline" size={11} color="#8B5CF6" />
           </TouchableOpacity>
         </View>
