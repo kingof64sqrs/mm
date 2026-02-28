@@ -15,7 +15,7 @@
   {
     "id": "2",
     "name": "Avani Sujal Shah",
-    "role": "President",
+    "role": "Treasurer",
     "photo": "ids/IMG-2-c6b2ba36.jpg",
     "phone": "+919345139204",
     "email": "avanishah75@gmail.com",
@@ -6600,6 +6600,19 @@
     "address": "Villa No 2, Phase 2\nTrisquare Suriya\nPLS Nagar\nChinniampalayam\nCoimbatore 641062",
     "bloodGroup": "AB+",
     "dob": "13-07-1973",
+    "groupNumber": 0,
+    "groupName": "Unassigned",
+    "groupRole": ""
+  },
+  {
+    "id": "523",
+    "name": "Sandhya Popat",
+    "role": "Member",
+    "photo": "ids/IMG-523-sandhyapopat.jpg",
+    "phone": "9843060777",
+    "email": "sandhyapopat777@gmail.com",
+    "address": "\"Vaibhav\"\n3, Chintamani Nagar\nSaibaba Colony\nCoimbatore 641038",
+    "bloodGroup": "B+",
     "groupNumber": 0,
     "groupName": "Unassigned",
     "groupRole": ""

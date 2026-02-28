@@ -507,6 +507,7 @@ const imageMap: { [key: string]: any } = {
   'IMG-520-sushilaradia.jpg': require('../ids/IMG-520-sushilaradia.jpg'),
   'IMG-521-bhanumatishah.jpg': require('../ids/IMG-521-bhanumatishah.jpg'),
   'IMG-522-falgunabadani.jpg': require('../ids/IMG-522-falgunabadani.jpg'),
+  'IMG-523-sandhyapopat.jpg': require('../ids/IMG-523-sandhyapopat.jpg'),
   'IMG-53-3dd64618.jpg': require('../ids/IMG-53-3dd64618.jpg'),
   'IMG-56-4b52ad89.jpg': require('../ids/IMG-56-4b52ad89.jpg'),
   'IMG-57-8f6a2d48.jpg': require('../ids/IMG-57-8f6a2d48.jpg'),

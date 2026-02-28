@@ -69,12 +69,12 @@ export default function CommitteeScreen({ navigation }: Props) {
     
     // Define the exact role hierarchy and order we want to display
     const roleGroups = [
-        { title: 'President', roleMatch: ['President'] },
-        { title: 'Vice Presidents', roleMatch: ['Vice President'] },
-        { title: 'Secretaries', roleMatch: ['Secretary', 'Joint Secretary'] },
-        { title: 'Treasurers', roleMatch: ['Treasurer', 'Joint Treasurer'] },
-        { title: 'Āadhar Stambh', roleMatch: ['Āadhar Stambh'] },
-        { title: 'Committee Members', roleMatch: ['Committee Member'] },
+        { title: 'President', roleMatch: ['President'], customOrder: null },
+        { title: 'Treasurers', roleMatch: ['Treasurer', 'Joint Treasurer'], customOrder: null },
+        { title: 'Vice Presidents', roleMatch: ['Vice President'], customOrder: null },
+        { title: 'Secretaries', roleMatch: ['Secretary', 'Joint Secretary'], customOrder: null },
+        { title: 'Committee Members', roleMatch: ['Committee Member'], customOrder: null },
+        { title: 'Āadhar Stambh', roleMatch: ['Āadhar Stambh'], customOrder: ['Ranjanben', 'Jyoti', 'Divya', 'Veena'] },
     ];
 
     const groupedMembers = React.useMemo(() => {
@@ -82,9 +82,29 @@ export default function CommitteeScreen({ navigation }: Props) {
             const filtered = membersData.filter(member =>
                 group.roleMatch.some(role => (member.role || '').includes(role))
             );
+            const getRoleIndex = (role: string) => {
+                // Sort by length descending to match most specific role first
+                const sorted = [...group.roleMatch]
+                    .map((r, i) => ({ r, i }))
+                    .sort((a, b) => b.r.length - a.r.length);
+                const found = sorted.find(({ r }) => (role || '').includes(r));
+                return found ? found.i : 999;
+            };
             return {
                 ...group,
-                data: filtered.sort((a, b) => a.name.localeCompare(b.name)),
+                data: filtered.sort((a, b) => {
+                    if (group.customOrder) {
+                        const idxA = group.customOrder.findIndex(n => a.name.includes(n));
+                        const idxB = group.customOrder.findIndex(n => b.name.includes(n));
+                        const rankA = idxA === -1 ? 999 : idxA;
+                        const rankB = idxB === -1 ? 999 : idxB;
+                        if (rankA !== rankB) return rankA - rankB;
+                    }
+                    const roleIndexA = getRoleIndex(a.role || '');
+                    const roleIndexB = getRoleIndex(b.role || '');
+                    if (roleIndexA !== roleIndexB) return roleIndexA - roleIndexB;
+                    return a.name.localeCompare(b.name);
+                }),
             };
         }).filter(group => group.data.length > 0); // Only return groups with members
     }, []);

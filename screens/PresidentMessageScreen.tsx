@@ -12,6 +12,7 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { RootStackParamList } from '../App';
+import { getImage } from '../utils/imageHelper';
 import { scaleFont, moderateScale, spacing } from '../utils/responsive';
 
 type Props = {
@@ -40,6 +41,13 @@ const PresidentMessageScreen: React.FC<Props> = ({ navigation }) => {
           style={styles.banner}
         >
           <Ionicons name="ribbon" size={40} color="#FFE4B5" />
+          <View style={styles.presidentPhotoFrame}>
+            <Image
+              source={getImage('ids/IMG-1-9fe00815.jpg')}
+              style={styles.presidentPhoto}
+              resizeMode="cover"
+            />
+          </View>
           <Text style={styles.bannerTitle}>Message from the President</Text>
           <Text style={styles.bannerSubtitle}>Mahila Mandal · 2023–2026</Text>
         </LinearGradient>
@@ -150,6 +158,25 @@ const styles = StyleSheet.create({
     paddingVertical: spacing.xxl,
     paddingHorizontal: spacing.lg,
     marginBottom: spacing.lg,
+  },
+  presidentPhotoFrame: {
+    width: moderateScale(110),
+    height: moderateScale(110),
+    borderRadius: moderateScale(55),
+    borderWidth: 3,
+    borderColor: '#FFE4B5',
+    overflow: 'hidden',
+    marginTop: spacing.md,
+    marginBottom: spacing.md,
+    elevation: 8,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 6,
+  },
+  presidentPhoto: {
+    width: '100%',
+    height: '100%',
   },
   bannerTitle: {
     fontSize: scaleFont(22),

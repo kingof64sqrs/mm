@@ -9,6 +9,7 @@ import {
   Dimensions,
   TouchableWithoutFeedback,
   Platform,
+  Linking,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -67,6 +68,13 @@ const Sidebar: React.FC<SidebarProps> = ({
     onClose();
     setTimeout(() => {
       navigation.navigate('PresidentMessage');
+    }, 300);
+  };
+
+  const handleNavigateToProjects = () => {
+    onClose();
+    setTimeout(() => {
+      navigation.navigate('Projects');
     }, 300);
   };
 
@@ -236,10 +244,30 @@ const Sidebar: React.FC<SidebarProps> = ({
             </View>
             <Text style={styles.menuItemText}>President's Message</Text>
           </TouchableOpacity>
+
+          <TouchableOpacity
+            style={styles.menuItem}
+            onPress={handleNavigateToProjects}
+          >
+            <View style={styles.menuIconContainer}>
+              <Ionicons name="heart-circle" size={22} color="#6B46C1" />
+            </View>
+            <Text style={styles.menuItemText}>Our Projects</Text>
+          </TouchableOpacity>
         </View>
 
         <View style={styles.sidebarFooter}>
-          <Text style={styles.kripioText}>Created by company Kripio</Text>
+          <Text style={styles.devByText}>Designed & Developed by</Text>
+          <Text style={styles.devNameText}>Krishna Paresh Raichura & Team</Text>
+          <TouchableOpacity
+            onPress={() => Linking.openURL('https://kriio.in')}
+            activeOpacity={0.7}
+            style={styles.kriioButton}
+          >
+            <Ionicons name="globe-outline" size={13} color="#8B5CF6" />
+            <Text style={styles.kriioLinkText}>kriio.in</Text>
+            <Ionicons name="open-outline" size={11} color="#8B5CF6" />
+          </TouchableOpacity>
         </View>
       </Animated.View>
     </>
@@ -353,15 +381,43 @@ const styles = StyleSheet.create({
     fontWeight: '700',
   },
   sidebarFooter: {
-    padding: spacing.xl,
+    paddingVertical: spacing.md,
+    paddingHorizontal: spacing.xl,
     alignItems: 'center',
     backgroundColor: '#F8F9FA',
+    borderTopWidth: 1,
+    borderTopColor: '#EDE9FE',
+    gap: 2,
   },
-  kripioText: {
-    fontSize: scaleFont(12),
-    fontWeight: '600',
+  devByText: {
+    fontSize: scaleFont(10),
     color: '#9CA3AF',
+    letterSpacing: 0.3,
+  },
+  devNameText: {
+    fontSize: scaleFont(12),
+    fontWeight: '700',
+    color: '#4C1D95',
+    letterSpacing: 0.2,
+  },
+  kriioButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 4,
+    marginTop: 4,
+    paddingHorizontal: spacing.sm,
+    paddingVertical: 4,
+    backgroundColor: '#EDE9FE',
+    borderRadius: moderateScale(12),
+    borderWidth: 1,
+    borderColor: '#DDD6FE',
+  },
+  kriioLinkText: {
+    fontSize: scaleFont(12),
+    fontWeight: '700',
+    color: '#8B5CF6',
     letterSpacing: 0.5,
+    textDecorationLine: 'underline',
   },
 });
 
