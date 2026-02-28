@@ -73,6 +73,7 @@ export default function CommitteeScreen({ navigation }: Props) {
         { title: 'Vice Presidents', roleMatch: ['Vice President'] },
         { title: 'Secretaries', roleMatch: ['Secretary', 'Joint Secretary'] },
         { title: 'Treasurers', roleMatch: ['Treasurer', 'Joint Treasurer'] },
+        { title: 'Āadhar Stambh', roleMatch: ['Āadhar Stambh'] },
         { title: 'Committee Members', roleMatch: ['Committee Member'] },
     ];
 
@@ -135,7 +136,7 @@ export default function CommitteeScreen({ navigation }: Props) {
         <SafeAreaView style={styles.container}>
             <CommonHeader
                 onMenuPress={toggleSidebar}
-                title="Committee"
+                title="Team EKTA (2023-2026)"
                 subtitle="Leadership Team"
                 subtitleIcon="star"
             />

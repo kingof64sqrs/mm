@@ -124,17 +124,43 @@ const SplashScreen: React.FC<Props> = ({ onFinish }) => {
         </Animated.View>
       </View>
 
-      {/* Credits section at bottom */}
+      {/* Memorial section at bottom */}
       <Animated.View
         style={[
-          styles.creditsContainer,
+          styles.memorialContainer,
           {
             opacity: textFadeAnim,
             transform: [{ translateY: slideAnim }],
           }
         ]}
       >
-        <Text style={styles.creditsText}>In Loving Memory of Late Malthi K Raichura</Text>
+        <Text style={styles.memorialTitle}>🕊️  In Loving Memory  🕊️</Text>
+        <View style={styles.photosRow}>
+          <View style={styles.memorialPerson}>
+            <View style={styles.photoFrame}>
+              <Image
+                source={require('../assets/pic2.png')}
+                style={styles.memorialPhoto}
+                resizeMode="cover"
+              />
+            </View>
+            <Text style={styles.memorialName}>Late Kishore{'\n'}Haridash Raichura</Text>
+          </View>
+
+          <View style={styles.memorialDivider} />
+
+          <View style={styles.memorialPerson}>
+            <View style={styles.photoFrame}>
+              <Image
+                source={require('../assets/pic1.png')}
+                style={styles.memorialPhoto}
+                resizeMode="cover"
+              />
+            </View>
+            <Text style={styles.memorialName}>Late Malthi{'\n'}Kishore Raichura</Text>
+          </View>
+        </View>
+        <Text style={styles.memorialSubtext}>Forever in our hearts & prayers</Text>
       </Animated.View>
 
       {/* Decorative circles */}
@@ -213,19 +239,75 @@ const styles = StyleSheet.create({
     borderRadius: 2,
     marginTop: 20,
   },
-  creditsContainer: {
+  memorialContainer: {
     position: 'absolute',
-    bottom: 50,
+    bottom: 30,
     alignItems: 'center',
     width: '100%',
     zIndex: 10,
+    paddingHorizontal: 20,
   },
-  creditsText: {
+  memorialTitle: {
+    color: '#FFE4B5',
+    fontSize: 13,
+    fontWeight: '700',
+    letterSpacing: 1.5,
+    textAlign: 'center',
+    marginBottom: 14,
+    textShadowColor: 'rgba(0,0,0,0.4)',
+    textShadowOffset: { width: 0, height: 1 },
+    textShadowRadius: 3,
+  },
+  photosRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 10,
+  },
+  memorialPerson: {
+    alignItems: 'center',
+    width: 110,
+  },
+  photoFrame: {
+    width: 74,
+    height: 74,
+    borderRadius: 37,
+    borderWidth: 2.5,
+    borderColor: '#FFE4B5',
+    overflow: 'hidden',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.4,
+    shadowRadius: 6,
+    elevation: 8,
+    backgroundColor: '#fff',
+  },
+  memorialPhoto: {
+    width: '100%',
+    height: '100%',
+  },
+  memorialName: {
     color: '#E9D5FF',
-    fontSize: 14,
-    fontWeight: '500',
-    letterSpacing: 1,
-    opacity: 0.8,
+    fontSize: 11,
+    fontWeight: '600',
+    textAlign: 'center',
+    marginTop: 7,
+    letterSpacing: 0.4,
+    lineHeight: 16,
+  },
+  memorialDivider: {
+    width: 1,
+    height: 70,
+    backgroundColor: 'rgba(255,228,181,0.4)',
+    marginHorizontal: 12,
+  },
+  memorialSubtext: {
+    color: '#D8B4FE',
+    fontSize: 11,
+    fontStyle: 'italic',
+    letterSpacing: 0.8,
+    opacity: 0.85,
+    marginTop: 4,
   },
   circle1: {
     position: 'absolute',

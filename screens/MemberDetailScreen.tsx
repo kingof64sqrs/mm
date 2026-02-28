@@ -82,6 +82,26 @@ const MemberDetailScreen: React.FC<Props> = ({ navigation, route }) => {
     }
   };
 
+  const handleWhatsApp = async () => {
+    if (isPlaceholder || !member.phone) {
+      Alert.alert('Not Available', 'Phone number not available for this member');
+      return;
+    }
+    const phoneNumber = member.phone.replace(/[\s\-().+]/g, '');
+    const url = `whatsapp://send?phone=91${phoneNumber}`;
+    try {
+      const supported = await Linking.canOpenURL(url);
+      if (supported) {
+        await Linking.openURL(url);
+      } else {
+        // Fallback to wa.me link
+        await Linking.openURL(`https://wa.me/91${phoneNumber}`);
+      }
+    } catch (error) {
+      Alert.alert('Error', 'Failed to open WhatsApp');
+    }
+  };
+
   const handleShareQR = async () => {
     try {
       if (qrCodeRef.current && qrCodeRef.current.capture) {
@@ -203,21 +223,30 @@ const MemberDetailScreen: React.FC<Props> = ({ navigation, route }) => {
       </ScrollView>
 
       <View style={styles.actionButtons}>
-        <TouchableOpacity 
-          style={[styles.callButton, (isPlaceholder || !member.phone) && styles.disabledButton]} 
+        <TouchableOpacity
+          style={[styles.callButton, (isPlaceholder || !member.phone) && styles.disabledButton]}
           onPress={handleCall}
           disabled={isPlaceholder || !member.phone}
         >
-          <Ionicons name="call" size={24} color="#fff" />
+          <Ionicons name="call" size={20} color="#fff" />
           <Text style={styles.buttonText}>Call</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity 
-          style={[styles.emailButton, (isPlaceholder || !member.email) && styles.disabledButton]} 
+        <TouchableOpacity
+          style={[styles.whatsappButton, (isPlaceholder || !member.phone) && styles.disabledButton]}
+          onPress={handleWhatsApp}
+          disabled={isPlaceholder || !member.phone}
+        >
+          <Ionicons name="logo-whatsapp" size={20} color="#fff" />
+          <Text style={styles.buttonText}>WhatsApp</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={[styles.emailButton, (isPlaceholder || !member.email) && styles.disabledButton]}
           onPress={handleEmail}
           disabled={isPlaceholder || !member.email}
         >
-          <Ionicons name="mail" size={24} color="#fff" />
+          <Ionicons name="mail" size={20} color="#fff" />
           <Text style={styles.buttonText}>Email</Text>
         </TouchableOpacity>
       </View>
@@ -379,6 +408,20 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 4,
   },
+  whatsappButton: {
+    flex: 1,
+    backgroundColor: '#25D366',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: spacing.md,
+    borderRadius: moderateScale(12),
+    elevation: 3,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
+  },
   emailButton: {
     flex: 1,
     backgroundColor: '#2196F3',
@@ -395,9 +438,9 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: '#fff',
-    fontSize: scaleFont(18),
+    fontSize: scaleFont(13),
     fontWeight: '600',
-    marginLeft: spacing.sm,
+    marginLeft: spacing.xs,
   },
   disabledButton: {
     backgroundColor: '#CCCCCC',

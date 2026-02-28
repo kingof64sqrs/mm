@@ -63,6 +63,13 @@ const Sidebar: React.FC<SidebarProps> = ({
     }, 300);
   };
 
+  const handleNavigateToPresidentMessage = () => {
+    onClose();
+    setTimeout(() => {
+      navigation.navigate('PresidentMessage');
+    }, 300);
+  };
+
   return (
     <>
       {isOpen && (
@@ -104,7 +111,7 @@ const Sidebar: React.FC<SidebarProps> = ({
           </View>
           <Text style={styles.sidebarTitle}>Menu</Text>
           <Text style={styles.sidebarSubtitle}>Mahila Mandal Directory</Text>
-          <Text style={styles.memorialText}>In Loving Memory of Malthi Kishore Raichura</Text>
+          <Text style={styles.memorialText}>{"🕊️ In Loving Memory of\nLate Kishore Haridash Raichura\n& Late Malthi Kishore Raichura"}</Text>
         </LinearGradient>
 
         <View style={styles.sidebarContent}>
@@ -219,6 +226,16 @@ const Sidebar: React.FC<SidebarProps> = ({
               Emergency Contacts
             </Text>
           </TouchableOpacity>
+
+          <TouchableOpacity
+            style={styles.menuItem}
+            onPress={handleNavigateToPresidentMessage}
+          >
+            <View style={styles.menuIconContainer}>
+              <Ionicons name="chatbubble-ellipses" size={22} color="#6B46C1" />
+            </View>
+            <Text style={styles.menuItemText}>President's Message</Text>
+          </TouchableOpacity>
         </View>
 
         <View style={styles.sidebarFooter}>
@@ -267,7 +284,7 @@ const styles = StyleSheet.create({
     width: moderateScale(50),
     height: moderateScale(50),
     borderRadius: moderateScale(25),
-    backgroundColor: 'rgba(255,255,255,0.2)',
+    backgroundColor: '#FFFFFF',
   },
   closeSidebarBtn: {
     padding: spacing.xs,
@@ -292,6 +309,7 @@ const styles = StyleSheet.create({
     color: '#FDE68A',
     marginTop: spacing.xs,
     fontStyle: 'italic',
+    lineHeight: scaleFont(17),
   },
   sidebarContent: {
     flex: 1,

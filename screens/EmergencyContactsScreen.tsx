@@ -39,7 +39,7 @@ const emergencyData: ContactCategory[] = [
     contacts: [
       { name: 'Sri Coimbatore Gujarati Samaj', phone: '0422-2393434', icon: 'call' },
       { name: 'Gujarati Samaj Guest House', phone: '9486412014', icon: 'home' },
-      { name: 'Kanchan Canteen Gujarati Samaj', phone: '8680834716', icon: 'restaurant' },
+      { name: 'Kanchan Gujarati Samaj', phone: '8680834716', icon: 'restaurant' },
       { name: 'Gujarati Samaj Hall Booking', phone: '9486256227', icon: 'calendar' },
     ],
   },
